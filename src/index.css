@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --container-padding: 60px;
+  --grid-gutter: 20px;
+}

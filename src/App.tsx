@@ -1,5 +1,21 @@
+import Faqs from "./components/Faqs";
+import Hero from "./components/Hero";
+import Important from "./components/Important";
+import Location from "./components/Location";
+import Present from "./components/Present";
+import Time from "./components/Time";
+
 function App() {
-  return <h1 className="bg-yellow w-full h-full grid place-items-center">tenimboda.cat</h1>;
+  return (
+    <div>
+      <Hero />
+      <Important />
+      <Location />
+      <Time />
+      <Present />
+      <Faqs />
+    </div>
+  );
 }
 
 export default App;
