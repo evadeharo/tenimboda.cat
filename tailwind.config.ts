@@ -1,12 +1,12 @@
-import type { Config } from "tailwindcss"
-import type { ScreensConfig, ThemeConfig } from "tailwindcss/types/config"
-import { pluginTypography } from "./src/lib/tailwind"
+import type { Config } from "tailwindcss";
+import type { ScreensConfig, ThemeConfig } from "tailwindcss/types/config";
+import { pluginTypography } from "./src/lib/tailwind";
 
 export const screens = {
   md: "768px",
   lg: "1024px",
   xl: "1440px",
-} as const satisfies ScreensConfig
+} as const satisfies ScreensConfig;
 
 export const colors = {
   white: "#FFFFFF",
@@ -16,7 +16,7 @@ export const colors = {
   transparent: "transparent",
   inherit: "inherit",
   "current-color": "currentColor",
-} as const satisfies ThemeConfig["colors"]
+} as const satisfies ThemeConfig["colors"];
 
 export default {
   content: ["./src/**/*.{ts,tsx}"],
@@ -24,7 +24,7 @@ export default {
     screens,
     colors,
     fontSize: {},
-    fontFamily: { suisse: "var(--font-suisse)", ivar: "var(--font-ivar)" }, // TODO: add Adobe font
+    fontFamily: { inter: "var(--font-inter)", roca: "var(--font-roca)" },
     extend: {
       spacing: {
         "container-padding": "var(--container-padding)", // TODO: 60px
@@ -35,8 +35,7 @@ export default {
   plugins: [
     pluginTypography({
       // Desktop
-      "text-title":
-        "text-[12.5rem] font-black leading-[10rem] tracking-normal", // TODO: add font
+      "text-title": "text-[12.5rem] font-black leading-[10rem] tracking-normal", // TODO: add font
     }),
   ],
-} satisfies Config
+} satisfies Config;
