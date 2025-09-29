@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 :root {
-  --container-padding: 60px;
-  --grid-gutter: 20px;
+  --container-padding: 3.75rem;
+  --grid-gutter: 1.25rem;
 }
