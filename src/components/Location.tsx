@@ -1,4 +1,5 @@
 import Grid from "./Grid";
+import image from "../assets/images/spray/spray_mid.png"
 
 const title = `Un decorat de pel·lícula`;
 const text = `La Cerdanya és un petit paradís al Pirineu, una vall oberta, pobles amb molta història i unes vistes d'infart. A nosaltres ens encanta fer-la servir com a camp base: a l'hivern ens passem els caps de setmana esquiant i després recuperant-nos davant de la llar de foc. 
@@ -8,11 +9,13 @@ En vuit anys de relació hem viscut molts moments a la Cerdanya, hem gaudit de l
 
 export default function Location() {
   return (
-    <Grid className="h-screen flex items-end pb-[3.75rem]">
+    <Grid className="h-screen flex items-end pb-[3.75rem] relative">
       <div className="col-span-8">
         <h2 className="text-title-m">{title}</h2>
         <p className="text-base mr-8">{text}</p>
       </div>
+
+      <img src={image} alt="" className="absolute left-0 top-0 -z-10" />
     </Grid>
   );
 }

@@ -1,4 +1,3 @@
-import Container from "./components/Container";
 import Faqs from "./components/Faqs";
 import Hero from "./components/Hero";
 import Important from "./components/Important";
@@ -8,14 +7,14 @@ import Time from "./components/Time";
 
 function App() {
   return (
-    <Container>
+    <main>
       <Hero />
       <Important />
       <Location />
       <Time />
       <Present />
       <Faqs />
-    </Container>
+    </main>
   );
 }
 
