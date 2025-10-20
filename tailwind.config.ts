@@ -40,12 +40,12 @@ export default {
       "text-title-l":
         "text-[7.75rem] font-black leading-[7.5rem] tracking-normal font-roca",
       "text-title-m":
-        "text-[5.625rem] font-black leading-[6.25rem] tracking-normal font-roca",
+        "text-[5rem] font-black leading-[6.25rem] tracking-normal font-roca",
       "text-subtitle":
         "text-[3.125rem] font-light tracking-normal font-roca",
       "text-subtitle-bold":
         "text-[3rem] font-black leading-[3.125rem] tracking-normal font-roca",
-      "text-base": "text-[1.25rem] tracking-normal font-inter",
+      "text-base": "text-[1.2rem] tracking-normal font-inter",
       "text-button": "text-[1.25rem] leading-none font-black tracking-normal font-roca",
       "text-cta": "text-[1.25rem] tracking-normal font-roca hover:underline",
     }),

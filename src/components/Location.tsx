@@ -1,21 +1,45 @@
 import Grid from "./Grid";
-import image from "../assets/images/spray/spray_mid.png"
-
-const title = `Un decorat de pel·lícula`;
-const text = `La Cerdanya és un petit paradís al Pirineu, una vall oberta, pobles amb molta història i unes vistes d'infart. A nosaltres ens encanta fer-la servir com a camp base: a l'hivern ens passem els caps de setmana esquiant i després recuperant-nos davant de la llar de foc. 
-A l'estiu us recomanem caminar per la muntanya, respirar aire ben net i gaudir d'uns paisatges (que com diu l'Eva) són dignes d'una pel·lícula.
-
-En vuit anys de relació hem viscut molts moments a la Cerdanya, hem gaudit de les coses que més ens agrada fer com a parella i compartit instants que no podrem oblidar mai amb amics i família. No ens imaginem un millor “spot” per fer oficial el nostre compromís. Sempre serà el nostre lloc segur al que tornar 🥰`;
+import image from "../assets/images/spray/spray_mid.png";
+import icon1 from "../assets/images/draws/location_1.png";
+import icon2 from "../assets/images/draws/location_2.png";
+import icon3 from "../assets/images/draws/location_3.png";
+import Markdown from "./Markdown";
+import { translations } from "../lib/texts";
 
 export default function Location() {
   return (
     <Grid className="h-screen flex items-end pb-[3.75rem] relative">
       <div className="col-span-8">
-        <h2 className="text-title-m">{title}</h2>
-        <p className="text-base mr-8">{text}</p>
+        <h2 className="text-title-m pb-[1.75rem]">
+          {translations.locations_title}
+        </h2>
+
+        <Markdown
+          components={{
+            p: ({ children }) => <p className="text-base mr-8">{children}</p>,
+            br: () => <span className="block h-5" />,
+          }}
+        >
+          {translations.locations_text}
+        </Markdown>
       </div>
 
       <img src={image} alt="" className="absolute left-0 top-0 -z-10" />
+      <img
+        src={icon1}
+        className="absolute top-[4rem] left-[4rem] -z-0 w-28"
+        draggable={false}
+      />
+      <img
+        src={icon2}
+        className="absolute top-[12rem] left-[30rem] -z-0 w-24"
+        draggable={false}
+      />
+      <img
+        src={icon3}
+        className="absolute top-[2rem] right-[32rem] -z-0 w-28"
+        draggable={false}
+      />
     </Grid>
   );
 }
