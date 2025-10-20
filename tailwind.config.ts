@@ -36,9 +36,9 @@ export default {
     pluginTypography({
       // Desktop
       "text-title-xl":
-        "text-[12.5rem] font-black leading-[10rem] tracking-normal font-roca",
+        "text-[11.5rem] font-black leading-[7rem] tracking-normal font-roca",
       "text-title-l":
-        "text-[8.75rem] font-black leading-[8.5rem] tracking-normal font-roca",
+        "text-[7.75rem] font-black leading-[7.5rem] tracking-normal font-roca",
       "text-title-m":
         "text-[5.625rem] font-black leading-[6.25rem] tracking-normal font-roca",
       "text-subtitle":
@@ -46,8 +46,8 @@ export default {
       "text-subtitle-bold":
         "text-[3rem] font-black leading-[3.125rem] tracking-normal font-roca",
       "text-base": "text-[1.25rem] tracking-normal font-inter",
-      button: "text-[1.25rem] font-black tracking-normal font-roca",
-      cta: "text-[1.25rem] tracking-normal font-roca",
+      "text-button": "text-[1.25rem] leading-none font-black tracking-normal font-roca",
+      "text-cta": "text-[1.25rem] tracking-normal font-roca hover:underline",
     }),
   ],
 } satisfies Config;

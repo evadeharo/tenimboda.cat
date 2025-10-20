@@ -1,8 +1,9 @@
 import { cx } from "class-variance-authority";
+import type { HTMLAttributes, ReactNode } from "react";
 
-type GridProps = React.HTMLAttributes<HTMLDivElement> & {
+type GridProps = HTMLAttributes<HTMLDivElement> & {
   className?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export default function Grid({ className, children, ...props }: GridProps) {
