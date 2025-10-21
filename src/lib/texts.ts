@@ -15,4 +15,33 @@ export const translations = {
   locations_text: `La Cerdanya és un petit paradís al Pirineu, una vall oberta, pobles amb molta història i unes vistes d'infart. A nosaltres ens encanta fer-la servir com a camp base: a l'hivern ens passem els caps de setmana esquiant i després recuperant-nos davant de la llar de foc. A l'estiu us recomanem caminar per la muntanya, respirar aire ben net i gaudir d'uns paisatges (que com diu l'Eva) són dignes d'una pel·lícula.\n En vuit anys de relació hem viscut molts moments a la Cerdanya, hem gaudit de les coses que més ens agrada fer com a parella i compartit instants que no podrem oblidar mai amb amics i família. No ens imaginem un millor “spot” per fer oficial el nostre compromís. Sempre serà el nostre lloc segur al que tornar 🥰`,
   time_title: `Com serà aquell dia?`,
   time_text: `Et deixem un resum de quines coses farem.\n Però has de saber que és un **casament diürn amb un horari aproximat de 12:00h a 22:30h**`,
-};
+  time_times: [
+    {
+      hour: "12h",
+      text: `Cerimonia religiosa a l'[esglèsia de Santa Maria de Llívia](https://share.google/gZrC0i61nemwl0KoJ)\n Trasllat a [La Formatgeria de Llívia](https://www.laformatgeria.com/)`,
+    },
+    { hour: "14h", text: `Inici dels aperitius\n Dinar & sobretaula` },
+    { hour: "19h", text: "Festa, ball i barra lliure" },
+  ],
+  present_title: `Volem fer un **viatge**`,
+  present_text: `Com bé ja sabeu, l'any passat vam mudar-nos a viure junts. Ara tenim un piset molt acollidor i ben preparat pel nostre dia a dia. Tot això gràcies a molts de vosaltres, que ens heu ajudat amb un munt de coses: pintar, tapar forats, desmuntar i muntar mobles, compres vàries, electrodomèstics, cortines, tèxtils, decoració i fins i tot el 'maleït' donut (que tant ens va costar trobar!!!).\n Aquesta invitació és perquè volem celebrar el nostre compromís amb tu, i no ens cal cap regal. Si tot i així vols participar en el nostre camí, pots donar-nos un cop de mà perquè la lluna de mel sigui encara més inoblidable ✨\n Pots fer una transferència a aquest número de compte: IBAN ES91 XXXX XXXX XXXX XXXX XXXX`,
+  faqs_title: "FAQS",
+  faqs_content: [
+    {
+      title: "Quin és el Dress Code?",
+      text: `Sentit comú! Volem que vingueu còmodes i llestxs per gaudir al màxim d'aquell dia. Eviteu el color blanc i qualsevol color que es pugui confondre amb el blanc. També reservarem el color verd maragda per als nostres padrins i dames d'honor.\nRecorda que l'enllaç tindrà lloc a La Cerdanya, als Pirineus. L'abril és el segon mes de primavera, quan els dies es van fent més llargs. Les temperatures màximes solen rondar els 20°C sempre que hi hagi sol, però la temperatura pot baixar fins a valors propers als 0°C a la nit.`,
+    },
+    {
+      title: "On puc allotjar-me?",
+      text: `Si vols fer nit a La Cerdanya et recomanem que reservis l'hotel com més aviat millor.\nPots trucar a l'hotel Bernat de So i preguntar per la disponibilitat per a qualsevol dia des del divendres fins al diumenge indicant que és per motiu del casament de l'Oriol i l'Eva.\nEl cost nit aproximat és de 100€ per habitació doble.  Trucant directament a l'hotel us donaran més informació. Tingueu en compte que és un hotel familiar i no massa gran, la disponibilitat és molt reduïda.\nSi preferiu buscar vosaltres mateixes altres opcions a Llívia i voltants hi ha diversos hotels, hostals i càmpings que també podeu consultar.`,
+    },
+    {
+      title: "On puc aparcar el cotxe?",
+      text: "Tant l'església com el restaurant tenen aparcament, no hi haurà problemes amb l'espai. Només us demanem que sigueu responsables: si heu de conduir millor beure begudes sense alcohol 😉",
+    },
+    {
+      title: "Tinc necesitats especials amb el menjar",
+      text: "Cap problema! Quan facis click en la confirmació d'assistència et farem diverses preguntes. Entre elles si tens alguna intolerància, al·lèrgia o restricció alimentària.",
+    },
+  ],
+}
