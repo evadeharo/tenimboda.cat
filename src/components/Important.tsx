@@ -8,7 +8,7 @@ export default function Important() {
   const [pos, setPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
   return (
-    <Grid className="h-screen flex items-end pb-[3.75rem]">
+    <Grid className="h-screen flex items-end pb-[3.75rem]" id="important">
       {hover && (
         <div
           className="pointer-events-none fixed w-24 h-24 bg-blue rounded-full mix-blend-difference transition-transform duration-75"

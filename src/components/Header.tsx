@@ -3,42 +3,38 @@ import { translations } from "../lib/texts";
 import Button from "./Button";
 
 function ButtonNavigation({
-  onClick,
   text,
   className,
+  link,
 }: {
-  onClick: () => void;
+  link: string;
   text: string;
   className?: string;
 }) {
   return (
-    <button
-      onClick={onClick}
-      type="button"
-      className={cx("text-cta pr-[1.65625rem]", className)}
-    >
+    <a href={link} className={cx("text-cta pr-[1.65625rem]", className)}>
       {text}
-    </button>
+    </a>
   );
 }
 
 const navItems = [
-  translations.cta_important,
-  translations.cta_location,
-  translations.cta_times,
-  translations.cta_present,
-  translations.cta_faqs,
+  { text: translations.cta_important, link: "#important" },
+  { text: translations.cta_location, link: "#lloc" },
+  { text: translations.cta_times, link: "#temps" },
+  { text: translations.cta_present, link: "#regal" },
+  { text: translations.cta_faqs, link: "#faqs" },
 ];
 
 export default function Header() {
   return (
     <nav className="fixed top-[2.85rem] end-[3rem] z-20 flex flex-col gap-[0.8rem] items-end">
       <Button>{translations.cta_confirmation}</Button>
-      {navItems.map((text, i) => (
+      {navItems.map((item, i) => (
         <ButtonNavigation
-          key={text}
-          onClick={() => console.log(text)}
-          text={text}
+          key={item.text}
+          text={item.text}
+          link={item.link}
           className={i === 0 ? "mt-1" : ""}
         />
       ))}

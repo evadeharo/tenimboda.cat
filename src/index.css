@@ -6,3 +6,7 @@
   --container-padding: 3.75rem;
   --grid-gutter: 1.25rem;
 }
+
+html {
+  scroll-behavior: smooth;
+}

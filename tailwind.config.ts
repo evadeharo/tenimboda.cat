@@ -44,8 +44,8 @@ export default {
       "text-subtitle":
         "text-[3.125rem] font-light tracking-normal font-roca",
       "text-subtitle-bold":
-        "text-[3rem] font-black leading-[3.125rem] tracking-normal font-roca",
-      "text-base": "text-[1.2rem] tracking-normal font-inter",
+        "text-[2.2rem] font-black leading-[3.125rem] tracking-normal font-roca",
+      "text-base": "text-[1.1rem] tracking-normal font-inter",
       "text-button": "text-[1.25rem] leading-none font-black tracking-normal font-roca",
       "text-cta": "text-[1.25rem] tracking-normal font-roca hover:underline",
     }),
