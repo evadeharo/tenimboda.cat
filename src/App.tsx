@@ -1,4 +1,5 @@
 import Faqs from "./components/Faqs";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Important from "./components/Important";
@@ -16,6 +17,7 @@ function App() {
       <Time />
       <Present />
       <Faqs />
+      <Footer />
     </main>
   );
 }

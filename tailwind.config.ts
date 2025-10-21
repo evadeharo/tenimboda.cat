@@ -42,7 +42,7 @@ export default {
       "text-title-m":
         "text-[5rem] font-black leading-[6.25rem] tracking-normal font-roca",
       "text-subtitle":
-        "text-[3.125rem] font-light tracking-normal font-roca",
+        "text-[2.7rem] font-light tracking-normal font-roca",
       "text-subtitle-bold":
         "text-[2.2rem] font-black leading-[3.125rem] tracking-normal font-roca",
       "text-base": "text-[1.1rem] tracking-normal font-inter",

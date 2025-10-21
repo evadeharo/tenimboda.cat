@@ -12,7 +12,7 @@ export default function Faqs() {
         </h2>
         <Accordion.Root
           defaultValue={[translations.faqs_content[0].title]}
-          className="flex flex-col gap-6"
+          className="flex flex-col gap-6 pb-12"
         >
           {translations.faqs_content.map((item) => (
             <Accordion.Item key={item.title} value={item.title}>
