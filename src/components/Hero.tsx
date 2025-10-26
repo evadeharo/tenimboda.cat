@@ -18,7 +18,7 @@ export default function Hero() {
 
       <img src={image} className="absolute inset-0 -z-10" draggable={false} />
       <img src={icon1} className="absolute top-[2rem] lg:top-[6.25rem] left-[2rem] lg:left-[6.25rem] -z-0 w-20 lg:w-28" draggable={false} />
-      <img src={icon3} className="absolute top-[22rem] left-[2rem] lg:top-[20rem] lg:left-[20.625rem] -z-0 w-24 lg:w-32" draggable={false} />
+      <img src={icon3} className="absolute top-[18rem] left-[2rem] lg:top-[20rem] lg:left-[20.625rem] -z-0 w-24 lg:w-32" draggable={false} />
       <img src={icon2} className="absolute top-[10rem] right-[8rem] lg:top-[3.75rem] lg:right-[20.25rem] -z-0 w-20 lg:w-28" draggable={false} />
       <img src={icon4} className="absolute top-[29rem] right-[2rem] lg:top-[40rem] lg:right-[10.625rem] -z-0 w-20 lg:w-28" draggable={false} />      
     </Grid>
