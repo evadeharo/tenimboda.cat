@@ -8,7 +8,7 @@ import { translations } from "../lib/texts";
 
 export default function Hero() {
   return (
-    <Grid className="min-h-[100dvh] flex items-end pb-[3.75rem] relative">
+    <Grid className="h-[100dvh] flex items-end pb-[3.75rem] relative">
       <div className="col-span-full">
         <div className="flex flex-col lg:items-center lg:w-max">
           <h1 className="text-title-xl-mobile lg:text-title-xl w-2/3 md:w-full">{translations.orioleva}</h1>
