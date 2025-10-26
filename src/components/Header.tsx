@@ -12,7 +12,7 @@ function ButtonNavigation({
   className?: string;
 }) {
   return (
-    <a href={link} className={cx("text-cta pr-[1.65625rem]", className)}>
+    <a href={link} className={cx("text-cta-mobile lg:text-cta pr-[1.65625rem]", className)}>
       {text}
     </a>
   );
@@ -28,16 +28,19 @@ const navItems = [
 
 export default function Header() {
   return (
-    <nav className="fixed top-[2.85rem] end-[3rem] z-20 flex flex-col gap-[0.8rem] items-end">
-      <Button>{translations.cta_confirmation}</Button>
-      {navItems.map((item, i) => (
-        <ButtonNavigation
-          key={item.text}
-          text={item.text}
-          link={item.link}
-          className={i === 0 ? "mt-1" : ""}
-        />
-      ))}
-    </nav>
+    <>
+      <div className="bg-gradient-to-b from-yellow to-transparent fixed top-0 left-0 w-full h-[10rem] lg:hidden" />
+      <nav className="fixed top-[2rem] end-[1rem] lg:top-[2.45rem] lg:end-[2.5rem] z-20 flex flex-wrap lg:flex-col gap-[0.8rem] items-end justify-end">
+        <Button>{translations.cta_confirmation}</Button>
+        {navItems.map((item, i) => (
+          <ButtonNavigation
+            key={item.text}
+            text={item.text}
+            link={item.link}
+            className={i === 0 ? "mt-1" : ""}
+          />
+        ))}
+      </nav>
+    </>
   );
 }
