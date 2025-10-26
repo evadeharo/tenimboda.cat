@@ -51,18 +51,18 @@ export default {
 
       // Mobile
       "text-title-xl-mobile":
-        "text-[5rem] font-black leading-[5rem] tracking-normal font-roca",
+        "text-[4.5rem] font-black leading-[4.5rem] tracking-normal font-roca",
       "text-title-l-mobile":
-        "text-[3.7rem] font-black leading-[4rem] tracking-normal font-roca",
+        "text-[3.5rem] font-black leading-[3.6rem] tracking-normal font-roca",
       "text-title-m-mobile":
-        "text-[3.2rem] font-black leading-[3.25rem] tracking-normal font-roca",
+        "text-[3rem] font-black leading-[3rem] tracking-normal font-roca",
       "text-subtitle-mobile":
-        "text-[1.7rem] leading-[2rem] font-light tracking-normal font-roca",
+        "text-[1.5rem] leading-[1.8rem] font-light tracking-normal font-roca",
       "text-subtitle-bold-mobile":
-        "text-[1.4rem] leading-[1.7rem] font-black tracking-normal font-roca",
-      "text-base-mobile": "text-[1rem] tracking-normal font-inter",
-      "text-button-mobile": "text-[1rem] leading-none font-black tracking-normal font-roca",
-      "text-cta-mobile": "text-[1rem] tracking-normal font-roca hover:underline",
+        "text-[1.2rem] leading-[1.5rem] font-black tracking-normal font-roca",
+      "text-base-mobile": "text-[0.9rem] tracking-normal font-inter",
+      "text-button-mobile": "text-[0.9rem] leading-none font-black tracking-normal font-roca",
+      "text-cta-mobile": "text-[0.9rem] tracking-normal font-roca hover:underline",
 
     }),
   ],
