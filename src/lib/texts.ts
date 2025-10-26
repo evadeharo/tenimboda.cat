@@ -45,6 +45,6 @@ export const translations = {
     },
   ],
   footer_reminder: `No t'oblidis de confirmar assistència.\n Pots fer-ho fent [clic aquí](https://share.google/gZrC0i61nemwl0KoJ)`,
-  footer_text: `**I quan tot hagi acabat on recupero els records d'aquell dia?**\n Després de gaudir-ho al màxim posarem en aquest espai un enllaç a la galeria digital que ens facilitarà el fotògraf.\n També t'animem a compartir tots els records que hagis generat en aquest [álbum compartit](https://share.google/gZrC0i61nemwl0KoJ) que omplirem entre tots i totes!`,
+  footer_text: `**I quan tot hagi acabat on recupero els records d'aquell dia?**\n Després de gaudir-ho al màxim posarem en aquest espai un enllaç a la galeria digital que ens facilitarà el fotògraf.\n També t'animem a compartir tots els records que hagis generat en aquest [álbum compartit](https://photos.app.goo.gl/QabfrYnaqy7Tatu46) que omplirem entre tots i totes!`,
   footer_thanks: `Gràcies per acompanyar-nos. Ens veiem aviat!`,
 };
