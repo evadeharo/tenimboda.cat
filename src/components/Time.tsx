@@ -1,22 +1,36 @@
 import { translations } from "../lib/texts";
 import Grid from "./Grid";
 import Markdown from "./Markdown";
-import icon1 from "../assets/images/draws/time_1.png"
-import icon2 from "../assets/images/draws/time_2.png"
-import icon3 from "../assets/images/draws/time_3.png"
-import icon4 from "../assets/images/draws/time_4.png"
+import icon1 from "../assets/images/draws/time_1.png";
+import icon2 from "../assets/images/draws/time_2.png";
+import icon3 from "../assets/images/draws/time_3.png";
+import icon4 from "../assets/images/draws/time_4.png";
+import { useMouseParallax } from "../lib/useMouseParallax";
+import { ParallaxIcon } from "./ParallaxIcon";
 
 export default function Time() {
+  const { mouseX, mouseY, handleMouseMove } = useMouseParallax();
+
   return (
-    <Grid className="min-h-[100dvh] flex items-end pb-[3.75rem] relative" id="temps">
+    <Grid
+      className="min-h-screen flex items-end pb-[3.75rem] relative"
+      onMouseMove={handleMouseMove}
+      id="temps"
+    >
       <div className="col-span-4 lg:col-span-8">
-        <h2 className="text-title-m-mobile lg:text-title-m pb-[1.75rem]">{translations.time_title}</h2>
+        <h2 className="text-title-m-mobile lg:text-title-m pb-[1.75rem]">
+          {translations.time_title}
+        </h2>
 
         <Markdown
           components={{
-            p: ({ children }) => <p className="text-base-mobile lg:text-base mr-8">{children}</p>,
+            p: ({ children }) => (
+              <p className="text-base-mobile lg:text-base mr-8">{children}</p>
+            ),
             strong: ({ children }) => (
-              <strong className="text-base-mobile lg:text-base mr-8 text-blue">{children}</strong>
+              <strong className="text-base-mobile lg:text-base mr-8 text-blue">
+                {children}
+              </strong>
             ),
             br: () => <span className="block h-1" />,
           }}
@@ -32,7 +46,13 @@ export default function Time() {
                 components={{
                   br: () => <span className="block h-0.5" />,
                   a: ({ children, href }) => (
-                    <a href={href} target="_blank" className="text-black underline">{children}</a>
+                    <a
+                      href={href}
+                      target="_blank"
+                      className="text-black underline"
+                    >
+                      {children}
+                    </a>
                   ),
                 }}
               >
@@ -43,10 +63,30 @@ export default function Time() {
         </div>
       </div>
 
-      <img src={icon1} className="absolute top-[9rem] left-[1rem] lg:top-[14.25rem] lg:left-[6.25rem] -z-0 w-20 lg:w-24" draggable={false} />
-      <img src={icon2} className="absolute top-0 left-[11rem] lg:left-[30rem] -z-0 w-20 lg:w-24" draggable={false} />
-      <img src={icon3} className="absolute top-[16rem] right-[2rem] lg:top-[10rem] lg:right-[30rem] -z-0 w-20 lg:w-28" draggable={false} />
-      <img src={icon4} className="absolute -bottom-[4rem] right-[2rem] lg:bottom-[8rem] lg:right-[15rem] -z-0 w-24 lg:w-32" draggable={false} />   
+      <ParallaxIcon
+        src={icon1}
+        mouseX={mouseX}
+        mouseY={mouseY}
+        className="absolute top-[9rem] left-[1rem] lg:top-[14.25rem] lg:left-[6.25rem] -z-0 w-20 lg:w-24"
+      />
+      <ParallaxIcon
+        src={icon2}
+        mouseX={mouseX}
+        mouseY={mouseY}
+        className="absolute top-0 left-[11rem] lg:left-[30rem] -z-0 w-20 lg:w-24"
+      />
+      <ParallaxIcon
+        src={icon3}
+        mouseX={mouseX}
+        mouseY={mouseY}
+        className="absolute top-[16rem] right-[2rem] lg:top-[10rem] lg:right-[30rem] -z-0 w-20 lg:w-28"
+      />
+      <ParallaxIcon
+        src={icon4}
+        mouseX={mouseX}
+        mouseY={mouseY}
+        className="absolute -bottom-[4rem] right-[2rem] lg:bottom-[8rem] lg:right-[15rem] -z-0 w-24 lg:w-32"
+      />
     </Grid>
   );
 }

@@ -4,7 +4,7 @@ import Markdown from "./Markdown";
 
 export default function Footer() {
   return (
-    <Grid className="py-[3rem] lg:py-[3.75rem] min-h-[100dvh] bg-yellow">
+    <Grid className="py-[3rem] lg:py-[3.75rem] min-h-screen bg-yellow">
       <div className="col-span-4 lg:col-span-3 order-2 lg:order-1">
         <Markdown
           components={{

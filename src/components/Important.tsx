@@ -10,7 +10,7 @@ export default function Important() {
 
   return (
     <Grid
-      className="min-h-[100dvh] flex items-end pb-[3.75rem] relative"
+      className="min-h-screen flex items-end pb-[3.75rem] relative"
       id="important"
     >
       {hover && (

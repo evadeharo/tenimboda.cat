@@ -20,7 +20,7 @@ const crossSvg = (
 
 export default function Faqs() {
   return (
-    <Grid className="pt-[6.25rem] min-h-[100dvh]" id="faqs">
+    <Grid className="pt-[6.25rem] min-h-screen" id="faqs">
       <div className="col-span-7">
         <h2 className="text-title-l-mobile lg:text-title-l mb-[2.8rem] lg:mb-[4.6875rem]">
           {translations.faqs_title}

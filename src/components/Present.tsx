@@ -5,7 +5,7 @@ import Markdown from "./Markdown";
 
 export default function Present() {
   return (
-    <Grid className="min-h-[100dvh] flex items-end pb-[3.75rem] relative" id="regal">
+    <Grid className="min-h-screen flex items-end pb-[3.75rem] relative" id="regal">
       <div className="col-span-7 flex flex-col gap-7">
         <Markdown
           components={{
