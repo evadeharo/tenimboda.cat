@@ -8,15 +8,15 @@ import icon4 from "../assets/images/draws/time_4.png"
 
 export default function Time() {
   return (
-    <Grid className="h-screen flex items-end pb-[3.75rem] relative" id="temps">
-      <div className="col-span-8">
-        <h2 className="text-title-m pb-[1.75rem]">{translations.time_title}</h2>
+    <Grid className="min-h-[100dvh] flex items-end pb-[3.75rem] relative" id="temps">
+      <div className="col-span-4 lg:col-span-8">
+        <h2 className="text-title-m-mobile lg:text-title-m pb-[1.75rem]">{translations.time_title}</h2>
 
         <Markdown
           components={{
-            p: ({ children }) => <p className="text-base mr-8">{children}</p>,
+            p: ({ children }) => <p className="text-base-mobile lg:text-base mr-8">{children}</p>,
             strong: ({ children }) => (
-              <strong className="text-base mr-8 text-blue">{children}</strong>
+              <strong className="text-base-mobile lg:text-base mr-8 text-blue">{children}</strong>
             ),
             br: () => <span className="block h-1" />,
           }}
@@ -24,9 +24,9 @@ export default function Time() {
           {translations.time_text}
         </Markdown>
 
-        <div className="mt-10">
+        <div className="mt-6 lg:mt-10">
           {translations.time_times.map((i) => (
-            <div className="flex gap-10">
+            <div className="flex gap-4 lg:gap-10 text-base-mobile lg:text-base ">
               <span className="font-bold">{i.hour}</span>
               <Markdown
                 components={{
@@ -43,10 +43,10 @@ export default function Time() {
         </div>
       </div>
 
-      <img src={icon1} className="absolute top-[14.25rem] left-[6.25rem] -z-0 w-24" draggable={false} />
-      <img src={icon2} className="absolute top-0 left-[30rem] -z-0 w-24" draggable={false} />
-      <img src={icon3} className="absolute top-[10rem] right-[30rem] -z-0 w-28" draggable={false} />
-      <img src={icon4} className="absolute bottom-[8rem] right-[15rem] -z-0 w-32" draggable={false} />   
+      <img src={icon1} className="absolute top-[9rem] left-[1rem] lg:top-[14.25rem] lg:left-[6.25rem] -z-0 w-20 lg:w-24" draggable={false} />
+      <img src={icon2} className="absolute top-0 left-[11rem] lg:left-[30rem] -z-0 w-20 lg:w-24" draggable={false} />
+      <img src={icon3} className="absolute top-[16rem] right-[2rem] lg:top-[10rem] lg:right-[30rem] -z-0 w-20 lg:w-28" draggable={false} />
+      <img src={icon4} className="absolute -bottom-[4rem] right-[2rem] lg:bottom-[8rem] lg:right-[15rem] -z-0 w-24 lg:w-32" draggable={false} />   
     </Grid>
   );
 }

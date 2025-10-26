@@ -10,7 +10,7 @@ import Time from "./components/Time";
 function App() {
   return (
     <main className="relative">
-      <Header />
+      {/* <Header /> */}
       <Hero />
       <Important />
       <Location />

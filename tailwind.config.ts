@@ -48,6 +48,22 @@ export default {
       "text-base": "text-[1.1rem] tracking-normal font-inter",
       "text-button": "text-[1.25rem] leading-none font-black tracking-normal font-roca",
       "text-cta": "text-[1.25rem] tracking-normal font-roca hover:underline",
+
+      // Mobile
+      "text-title-xl-mobile":
+        "text-[5rem] font-black leading-[5rem] tracking-normal font-roca",
+      "text-title-l-mobile":
+        "text-[3.7rem] font-black leading-[4rem] tracking-normal font-roca",
+      "text-title-m-mobile":
+        "text-[3.2rem] font-black leading-[3.25rem] tracking-normal font-roca",
+      "text-subtitle-mobile":
+        "text-[1.7rem] leading-[2rem] font-light tracking-normal font-roca",
+      "text-subtitle-bold-mobile":
+        "text-[1.4rem] leading-[1.7rem] font-black tracking-normal font-roca",
+      "text-base-mobile": "text-[1rem] tracking-normal font-inter",
+      "text-button-mobile": "text-[1rem] leading-none font-black tracking-normal font-roca",
+      "text-cta-mobile": "text-[1rem] tracking-normal font-roca hover:underline",
+
     }),
   ],
 } satisfies Config;

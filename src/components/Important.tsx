@@ -1,3 +1,4 @@
+import image from "../assets/images/spray/spray_bottom.png";
 import { useState } from "react";
 import { translations } from "../lib/texts";
 import Grid from "./Grid";
@@ -8,10 +9,13 @@ export default function Important() {
   const [pos, setPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
   return (
-    <Grid className="h-screen flex items-end pb-[3.75rem]" id="important">
+    <Grid
+      className="min-h-[100dvh] flex items-end pb-[3.75rem] relative"
+      id="important"
+    >
       {hover && (
         <div
-          className="pointer-events-none fixed w-24 h-24 bg-blue rounded-full mix-blend-difference transition-transform duration-75"
+          className="hidden lg:fixed pointer-events-none w-24 h-24 bg-blue rounded-full mix-blend-difference transition-transform duration-75"
           style={{
             left: `${pos.x - 48}px`,
             top: `${pos.y - 48}px`,
@@ -21,18 +25,26 @@ export default function Important() {
       )}
 
       <div
-        className="col-span-7 group cursor-pointer"
+        className="col-span-4 lg:col-span-7 group cursor-pointer"
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         onMouseMove={(e) => setPos({ x: e.clientX, y: e.clientY })}
       >
         <div>
-          <h2 className="text-title-l">{translations.important_title}</h2>
+          <h2 className="text-title-l-mobile lg:text-title-l">
+            {translations.important_title}
+          </h2>
           <Markdown
             components={{
-              p: ({ children }) => <p className="text-title-l">{children}</p>,
+              p: ({ children }) => (
+                <p className="text-title-l-mobile lg:text-title-l">
+                  {children}
+                </p>
+              ),
               strong: ({ children }) => (
-                <strong className="text-title-l text-blue">{children}</strong>
+                <strong className="text-title-l-mobile lg:text-title-l text-blue">
+                  {children}
+                </strong>
               ),
             }}
           >
@@ -43,7 +55,9 @@ export default function Important() {
         <Markdown
           components={{
             p: ({ children }) => (
-              <p className="group text-base mr-8 pt-7">{children}</p>
+              <p className="group text-base-mobile lg:text-base mr-8 pt-7">
+                {children}
+              </p>
             ),
           }}
         >
@@ -52,7 +66,9 @@ export default function Important() {
         <Markdown
           components={{
             p: ({ children }) => (
-              <p className="group text-base mr-8 pt-7">{children}</p>
+              <p className="group text-base-mobile lg:text-base mr-8 pt-7">
+                {children}
+              </p>
             ),
             strong: ({ children }) => (
               <strong className="text-black font-semibold">{children}</strong>
@@ -63,6 +79,8 @@ export default function Important() {
           {translations.important_details}
         </Markdown>
       </div>
+
+      <img src={image} className="absolute inset-0 -z-10 lg:hidden" draggable={false} />
     </Grid>
   );
 }

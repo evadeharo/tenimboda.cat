@@ -20,9 +20,9 @@ const crossSvg = (
 
 export default function Faqs() {
   return (
-    <Grid className="pt-[6.25rem] min-h-screen" id="faqs">
+    <Grid className="pt-[6.25rem] min-h-[100dvh]" id="faqs">
       <div className="col-span-7">
-        <h2 className="text-title-l mb-[4.6875rem]">
+        <h2 className="text-title-l-mobile lg:text-title-l mb-[2.8rem] lg:mb-[4.6875rem]">
           {translations.faqs_title}
         </h2>
         <Accordion.Root
@@ -31,7 +31,7 @@ export default function Faqs() {
         >
           {translations.faqs_content.map((item) => (
             <Accordion.Item key={item.title} value={item.title}>
-              <Accordion.ItemTrigger className="text-subtitle-bold flex justify-between w-full text-left">
+              <Accordion.ItemTrigger className="text-subtitle-bold-mobile lg:text-subtitle-bold flex justify-between w-full text-left gap-6">
                 {item.title}
                 <Accordion.ItemIndicator className="data-[state=closed]:rotate-0 rotate-45 transform transition-all duration-200 aspect-square w-6 h-6 grid place-items-center">
                   <div className="w-5">{crossSvg}</div>
@@ -41,7 +41,7 @@ export default function Faqs() {
                 <Markdown
                   components={{
                     p: ({ children }) => (
-                      <p className="text-base">{children}</p>
+                      <p className="text-base-mobile lg:text-base mt-3 lg:mt-0">{children}</p>
                     ),
                     br: () => <span className="block h-2" />,
                     strong: ({ children }) => (
