@@ -29,7 +29,7 @@ const navItems = [
 export default function Header() {
   return (
     <>
-      <div className="bg-gradient-to-b from-yellow to-transparent fixed top-0 left-0 w-full h-[10rem] lg:hidden" />
+      <div className="bg-gradient-to-b from-yellow to-transparent fixed top-0 left-0 w-full h-[12rem] lg:hidden" />
       <nav className="fixed top-[2rem] end-[1rem] lg:top-[2.45rem] lg:end-[2.5rem] z-20 flex flex-wrap lg:flex-col gap-[0.8rem] items-end justify-end">
         <Button>{translations.cta_confirmation}</Button>
         {navItems.map((item, i) => (
