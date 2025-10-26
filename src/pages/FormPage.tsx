@@ -20,7 +20,8 @@ export default function FormPage() {
         {stepId === "form" && (
           <FormScreen
             closeClick={() => window.alert("Cuidado!")}
-            onClick={() => setStepId("thanks")}
+            onClick={() => console.log("sent")}
+            // onClick={() => setStepId("thanks")}
           />
         )}
         {stepId === "thanks" && (

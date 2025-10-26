@@ -3,6 +3,9 @@ import { translations } from "../lib/texts";
 import Button from "./Button";
 import { RadioGroup } from "@ark-ui/react";
 import { cx } from "class-variance-authority";
+import { getInputProps, useForm } from "@conform-to/react";
+import { getZodConstraint, parseWithZod } from "@conform-to/zod";
+import { FormField } from "./FormField";
 
 const ConfirmationSchema = z
   .object({
@@ -46,6 +49,16 @@ export function FormScreen({
   onClick: () => void;
   closeClick: () => void;
 }) {
+  const [form, fields] = useForm({
+    id: "confirmation-form",
+    constraint: getZodConstraint(ConfirmationSchema),
+    onValidate({ formData }) {
+      return parseWithZod(formData, { schema: ConfirmationSchema });
+    },
+    shouldValidate: "onBlur",
+    shouldRevalidate: "onInput",
+  });
+
   return (
     <section className="flex gap-6 flex-col">
       <div className="w-full flex justify-end">
@@ -54,8 +67,19 @@ export function FormScreen({
         </Button>
       </div>
 
-      <form className="flex flex-col gap-12">
-        <RadioGroup.Root className="lg:px-[12rem] flex gap-5 flex-col">
+      <form
+        className="flex flex-col gap-12"
+        {...form}
+        onSubmit={(e) => {
+          e.preventDefault();
+          console.log("Form enviado:", form.value);
+          onClick();
+        }}
+      >
+        <RadioGroup.Root
+          name={fields.foodSpecial.name}
+          className="lg:px-[12rem] flex gap-5 flex-col"
+        >
           <RadioGroup.Label className="text-subtitle-s-mobile lg:text-subtitle-s">
             {translations.confirmation_title_2}
           </RadioGroup.Label>
@@ -76,21 +100,27 @@ export function FormScreen({
                 )}
               >
                 <RadioGroup.ItemText>{item}</RadioGroup.ItemText>
-                <RadioGroup.ItemHiddenInput />
+                <RadioGroup.ItemHiddenInput name="foodSpecial" />
               </RadioGroup.Item>
             ))}
           </div>
         </RadioGroup.Root>
 
-        <div className="lg:px-[12rem] flex gap-5 flex-col">
-          <h2 className="text-subtitle-s-mobile lg:text-subtitle-s ">
-            {translations.confirmation_title_3}
-          </h2>
-          {/* TODO: input */}
-          {translations.confirmation_placeholder_3}
-        </div>
+        <FormField
+          label={translations.confirmation_title_3}
+          className="lg:px-[12rem]"
+        >
+          <input
+            placeholder={translations.confirmation_placeholder_3}
+            {...getInputProps(fields.foodSpecialInput, { type: "text" })}
+            className="text-base-mobile lg:text-base w-full border-b-[1px] my-4 pb-1"
+          />
+        </FormField>
 
-        <RadioGroup.Root className="lg:px-[12rem] flex gap-5 flex-col">
+        <RadioGroup.Root
+          name={fields.plusOne.name}
+          className="lg:px-[12rem] flex gap-5 flex-col"
+        >
           <RadioGroup.Label className="text-subtitle-s-mobile lg:text-subtitle-s">
             {translations.confirmation_title_4}
           </RadioGroup.Label>
@@ -110,13 +140,16 @@ export function FormScreen({
                 )}
               >
                 <RadioGroup.ItemText>{item}</RadioGroup.ItemText>
-                <RadioGroup.ItemHiddenInput />
+                <RadioGroup.ItemHiddenInput name="foodSpecialInput" />
               </RadioGroup.Item>
             ))}
           </div>
         </RadioGroup.Root>
 
-        <RadioGroup.Root className="lg:px-[12rem] flex gap-5 flex-col">
+        <RadioGroup.Root
+          name={fields.plusOneFoodSpecial.name}
+          className="lg:px-[12rem] flex gap-5 flex-col"
+        >
           <RadioGroup.Label className="text-subtitle-s-mobile lg:text-subtitle-s">
             {translations.confirmation_title_5}
           </RadioGroup.Label>
@@ -136,30 +169,36 @@ export function FormScreen({
                 )}
               >
                 <RadioGroup.ItemText>{item}</RadioGroup.ItemText>
-                <RadioGroup.ItemHiddenInput />
+                <RadioGroup.ItemHiddenInput name="plusOneFoodSpecial" />
               </RadioGroup.Item>
             ))}
           </div>
         </RadioGroup.Root>
 
-        <div className="lg:px-[12rem] flex gap-5 flex-col">
-          <h2 className="text-subtitle-s-mobile lg:text-subtitle-s ">
-            {translations.confirmation_title_6}
-          </h2>
-          {/* TODO: input */}
-          {translations.confirmation_placeholder_6}
-        </div>
+        <FormField
+          label={translations.confirmation_title_6}
+          className="lg:px-[12rem]"
+        >
+          <input
+            placeholder={translations.confirmation_placeholder_6}
+            {...getInputProps(fields.plusOneFoodSpecialInput, { type: "text" })}
+            className="text-base-mobile lg:text-base w-full border-b-[1px] my-4 pb-1"
+          />
+        </FormField>
 
-        <div className="lg:px-[12rem] flex gap-5 flex-col">
-          <h2 className="text-subtitle-s-mobile lg:text-subtitle-s ">
-            {translations.confirmation_title_7}
-          </h2>
-          {/* TODO: input */}
-          {translations.confirmation_placeholder_7}
-        </div>
+        <FormField
+          label={translations.confirmation_title_7}
+          className="lg:px-[12rem]"
+        >
+          <input
+            placeholder={translations.confirmation_placeholder_7}
+            {...getInputProps(fields.song, { type: "text" })}
+            className="text-base-mobile lg:text-base w-full border-b-[1px] my-4 pb-1"
+          />
+        </FormField>
 
         <div className="lg:px-[12rem] flex justify-center">
-          <Button variant="bg-blue" onClick={onClick}>
+          <Button type="submit" variant="bg-blue" onClick={onClick}>
             {translations.confirmation_send_form}
           </Button>
         </div>
