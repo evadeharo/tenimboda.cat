@@ -12,7 +12,7 @@ export type FormFieldProps = {
 export function FormField({
   label,
   children,
-  errors,
+  // errors,
   className,
   labelClassName,
 }: FormFieldProps) {
