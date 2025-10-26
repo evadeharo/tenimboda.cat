@@ -43,10 +43,12 @@ export default {
         "text-[5rem] font-black leading-[6.25rem] tracking-normal font-roca",
       "text-subtitle":
         "text-[2.7rem] font-light tracking-normal font-roca",
+      "text-subtitle-s":
+        "text-[1.7rem] font-light leading-[2.2rem] tracking-normal font-roca",
       "text-subtitle-bold":
-        "text-[2.2rem] font-black leading-[3.125rem] tracking-normal font-roca",
+        "text-[2.2rem] font-black leading-[2.2rem] tracking-normal font-roca",
       "text-base": "text-[1.1rem] tracking-normal font-inter",
-      "text-button": "text-[1.25rem] leading-none font-black tracking-normal font-roca",
+      "text-button": "text-[1.25rem] leading-none font-semibold tracking-normal font-roca",
       "text-cta": "text-[1.25rem] tracking-normal font-roca hover:underline",
 
       // Mobile
@@ -58,6 +60,8 @@ export default {
         "text-[3rem] font-black leading-[3rem] tracking-normal font-roca",
       "text-subtitle-mobile":
         "text-[1.5rem] leading-[1.8rem] font-light tracking-normal font-roca",
+      "text-subtitle-s-mobile":
+        "text-[1.2rem] leading-[1.3rem] font-light tracking-normal font-roca",
       "text-subtitle-bold-mobile":
         "text-[1.2rem] leading-[1.5rem] font-black tracking-normal font-roca",
       "text-base-mobile": "text-[0.9rem] tracking-normal font-inter",

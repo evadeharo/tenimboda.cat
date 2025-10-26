@@ -1,4 +1,5 @@
 export const translations = {
+  // landing
   orioleva: `Oriol & Eva`,
   subtitle: `Dissabte 11 d'abril de 2026`,
   important_title: `Ei ei ei!`,
@@ -47,4 +48,45 @@ export const translations = {
   footer_reminder: `No t'oblidis de confirmar assistència.\n Pots fer-ho fent [clic aquí](/confirmation)`,
   footer_text: `**I quan tot hagi acabat on recupero els records d'aquell dia?**\n Després de gaudir-ho al màxim posarem en aquest espai un enllaç a la galeria digital que ens facilitarà el fotògraf.\n També t'animem a compartir tots els records que hagis generat en aquest [álbum compartit](https://photos.app.goo.gl/QabfrYnaqy7Tatu46) que omplirem entre tots i totes!`,
   footer_thanks: `Gràcies per acompanyar-nos. Ens veiem aviat!`,
+
+  // confirmation
+  confirmation_title_1:
+    "Hola ${nomConvidat}! Estem molt contents de poder comptar amb tu el pròxim 11 d'abril.",
+  confirmation_text_1:
+    "Ara necessitarem que responguis unes poques preguntes per a poder garantir que tot rutlli com cal aquell dia.",
+
+  cta_close: "Tanca",
+  cta_second: "Un segon...",
+  cta_confirm: "Confirmo que vinc",
+  cta_yes_i: "Sí en tinc",
+  cta_no_i: "No en tinc",
+  cta_confirm_simple: "Confirmo",
+  confirmation_title_2:
+    "Tens alguna intolerància, al·lèrgia o restricció alimentària?*",
+  confirmation_text_2:
+    "Tingues en compte que aquesta pregunta no és per a respondre si hi ha alguna cosa que no t'agrada menjar. Sinó que és per a gent que realment no pot menjar un aliment per motius mèdics.",
+  confirmation_title_3: "Digue'ns quin és l'aliment que no pots menjar",
+  confirmation_placeholder_3: "El que no puc menjar és...",
+  confirmation_title_4: "Vindrà ${nomAcompanyant} amb tu?*",
+  confirmation_cta_no: "No podrà :(",
+  confirmation_cta_yes: "Està il·lusionat!",
+  confirmation_title_5:
+    "El teu acompanyant té alguna intolerància, al·lèrgia o restricció alimentària?",
+  confirmation_text_5:
+    "Tingues en compte que aquesta pregunta no és per a respondre si hi ha alguna cosa que no li agrada menjar. Sinó que és per a gent que realment no pot menjar un aliment per motius mèdics.",
+  confirmation_cta_no_5: "No en té",
+  confirmation_cta_yes_5: "Sí en té",
+  confirmation_title_6: "Digue'ns quin és l'aliment que no pot menjar",
+  confirmation_placeholder_6: "El que no pot menjar és...",
+  confirmation_title_7: "Vols proposar alguna cançó per al set del DJ?",
+  confirmation_placeholder_7: "El nom de la cançó és...",
+  confirmation_cta_no_7: "Millor no",
+  confirmation_cta_yes_7: "Continua",
+  confirmation_send_form: "Confirmo! Envia el formulari",
+
+  thanks_title:
+    "Moltes gràcies ${nomConvidat}! La teva assistència ha estat confirmada.",
+  thanks_text:
+    "Recorda llegir bé tota la informació que hem deixat en aquest web. I no dubtis en contactar-nos si ho necesites!",
+  thanks_cta: "Ens veiem el dia 11/04!",
 };
