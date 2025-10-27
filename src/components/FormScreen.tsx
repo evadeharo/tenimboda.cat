@@ -3,41 +3,42 @@ import { translations } from "../lib/texts";
 import Button from "./Button";
 import { RadioGroup } from "@ark-ui/react";
 import { cx } from "class-variance-authority";
-import { getInputProps, useForm } from "@conform-to/react";
-import { getZodConstraint, parseWithZod } from "@conform-to/zod";
+import { getFormProps, getInputProps, useForm } from "@conform-to/react";
+import { parseWithZod } from "@conform-to/zod";
 import { FormField } from "./FormField";
 
 const ConfirmationSchema = z
   .object({
-    foodSpecial: z.boolean(),
+    foodSpecial: z.string(), // "true" o "false"
     foodSpecialInput: z.string().optional(),
-    plusOne: z.boolean(),
-    plusOneFoodSpecial: z.boolean().optional(),
+    plusOne: z.string(), // "true" o "false"
+    plusOneFoodSpecial: z.string().optional(), // "true" o "false"
     plusOneFoodSpecialInput: z.string().optional(),
     song: z.string().optional(),
   })
   .superRefine((data, ctx) => {
-    if (data.foodSpecial && !data.foodSpecialInput?.trim()) {
+    if (data.foodSpecial === "true" && !data.foodSpecialInput?.trim()) {
       ctx.addIssue({
         path: ["foodSpecialInput"],
         code: z.ZodIssueCode.custom,
-        message: "Este campo es requerido",
+        message: "Necesitem aquesta info!",
       });
     }
-
-    if (data.plusOne && data.plusOneFoodSpecial === undefined) {
+    if (data.plusOne === "true" && data.plusOneFoodSpecial === undefined) {
       ctx.addIssue({
         path: ["plusOneFoodSpecial"],
         code: z.ZodIssueCode.custom,
-        message: "Debes indicar si hay comida especial para tu acompañante",
+        message: "Ei! Has de respondre això",
       });
     }
-
-    if (data.plusOneFoodSpecial && !data.plusOneFoodSpecialInput?.trim()) {
+    if (
+      data.plusOneFoodSpecial === "true" &&
+      !data.plusOneFoodSpecialInput?.trim()
+    ) {
       ctx.addIssue({
         path: ["plusOneFoodSpecialInput"],
         code: z.ZodIssueCode.custom,
-        message: "Este campo es requerido",
+        message: "Necesitem aquesta info!",
       });
     }
   });
@@ -51,12 +52,18 @@ export function FormScreen({
 }) {
   const [form, fields] = useForm({
     id: "confirmation-form",
-    constraint: getZodConstraint(ConfirmationSchema),
+    shouldValidate: "onBlur",
+    shouldRevalidate: "onInput",
     onValidate({ formData }) {
       return parseWithZod(formData, { schema: ConfirmationSchema });
     },
-    shouldValidate: "onBlur",
-    shouldRevalidate: "onInput",
+    onSubmit(event) {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      const result = parseWithZod(formData, { schema: ConfirmationSchema });
+      console.log("➡️ FormData:", Object.fromEntries(formData.entries()));
+      console.log("✅ Resultado parseado:", result);
+    },
   });
 
   return (
@@ -67,127 +74,163 @@ export function FormScreen({
         </Button>
       </div>
 
-      <form
-        className="flex flex-col gap-12"
-        {...form}
-        onSubmit={(e) => {
-          e.preventDefault();
-          console.log("Form enviado:", form.value);
-          onClick();
-        }}
-      >
-        <RadioGroup.Root
-          name={fields.foodSpecial.name}
-          className="lg:px-[12rem] flex gap-5 flex-col"
-        >
-          <RadioGroup.Label className="text-subtitle-s-mobile lg:text-subtitle-s">
-            {translations.confirmation_title_2}
-          </RadioGroup.Label>
+      <form className="flex flex-col gap-12" {...getFormProps(form)}>
+        <div className="lg:px-[12rem] flex gap-5 flex-col">
+          <div className="flex flex-col gap-2">
+            <h2 className="text-subtitle-s-mobile lg:text-subtitle-s">
+              {translations.confirmation_title_2}
+            </h2>
+            <p className="text-base-mobile lg:text-[0.9375rem]">
+              {translations.confirmation_text_2}
+            </p>
+          </div>
 
-          <p className="text-base-mobile lg:text-base">
-            {translations.confirmation_text_2}
-          </p>
-
-          <div className="flex gap-5 mt-3">
-            {[translations.cta_yes_i, translations.cta_no_i].map((item) => (
+          <RadioGroup.Root
+            name={fields.foodSpecial.name}
+            defaultValue={fields.foodSpecial.initialValue}
+            className="flex gap-4"
+          >
+            {[
+              { label: translations.cta_no_i, value: "false" },
+              { label: translations.cta_yes_i, value: "true" },
+            ].map((item) => (
               <RadioGroup.Item
-                key={item}
-                value={item}
+                key={item.value}
+                value={item.value}
                 className={cx(
-                  "flex items-center gap-2 cursor-pointer text-button-mobile lg:text-button",
+                  "flex items-center gap-2 cursor-pointer text-button-mobile lg:text-button w-max",
                   "data-[state=checked]:bg-blue data-[state=checked]:text-white",
                   "shadow-[0_4px_8.7px_0_rgba(0,0,0,0.25)] px-[1.875rem] pt-2.5 pb-2 rounded-full"
                 )}
               >
-                <RadioGroup.ItemText>{item}</RadioGroup.ItemText>
-                <RadioGroup.ItemHiddenInput name="foodSpecial" />
+                <RadioGroup.ItemText>{item.label}</RadioGroup.ItemText>
+                <RadioGroup.ItemHiddenInput />
               </RadioGroup.Item>
             ))}
-          </div>
-        </RadioGroup.Root>
+          </RadioGroup.Root>
+          {fields.foodSpecial.errors && (
+            <span className="text-[red] text-base-mobile lg:text-[0.875rem]">
+              {fields.foodSpecial.errors}
+            </span>
+          )}
+        </div>
 
         <FormField
           label={translations.confirmation_title_3}
-          className="lg:px-[12rem]"
+          errors={fields.foodSpecialInput.errors}
+          className={cx(
+            "lg:px-[12rem]",
+            fields.foodSpecial.value !== "true" &&
+              "opacity-50 cursor-not-allowed"
+          )}
         >
           <input
             placeholder={translations.confirmation_placeholder_3}
             {...getInputProps(fields.foodSpecialInput, { type: "text" })}
             className="text-base-mobile lg:text-base w-full border-b-[1px] my-4 pb-1"
+            disabled={fields.foodSpecial.value !== "true"}
           />
         </FormField>
 
-        <RadioGroup.Root
-          name={fields.plusOne.name}
-          className="lg:px-[12rem] flex gap-5 flex-col"
-        >
-          <RadioGroup.Label className="text-subtitle-s-mobile lg:text-subtitle-s">
+        <div className="lg:px-[12rem] flex gap-5 flex-col">
+          <h2 className="text-subtitle-s-mobile lg:text-subtitle-s">
             {translations.confirmation_title_4}
-          </RadioGroup.Label>
+          </h2>
 
-          <div className="flex gap-5 mt-3">
+          <RadioGroup.Root
+            name={fields.plusOne.name}
+            defaultValue={fields.plusOne.initialValue}
+            className="flex gap-4"
+          >
             {[
-              translations.confirmation_cta_no,
-              translations.confirmation_cta_yes,
+              { label: translations.confirmation_cta_no, value: "false" },
+              { label: translations.confirmation_cta_yes, value: "true" },
             ].map((item) => (
               <RadioGroup.Item
-                key={item}
-                value={item}
+                key={item.value}
+                value={item.value}
                 className={cx(
-                  "flex items-center gap-2 cursor-pointer text-button-mobile lg:text-button",
+                  "flex items-center gap-2 cursor-pointer text-button-mobile lg:text-button w-max",
                   "data-[state=checked]:bg-blue data-[state=checked]:text-white",
                   "shadow-[0_4px_8.7px_0_rgba(0,0,0,0.25)] px-[1.875rem] pt-2.5 pb-2 rounded-full"
                 )}
               >
-                <RadioGroup.ItemText>{item}</RadioGroup.ItemText>
-                <RadioGroup.ItemHiddenInput name="foodSpecialInput" />
+                <RadioGroup.ItemText>{item.label}</RadioGroup.ItemText>
+                <RadioGroup.ItemHiddenInput />
               </RadioGroup.Item>
             ))}
-          </div>
-        </RadioGroup.Root>
+          </RadioGroup.Root>
+          {fields.plusOne.errors && (
+            <span className="text-[red] text-base-mobile lg:text-[0.875rem]">
+              {fields.plusOne.errors}
+            </span>
+          )}
+        </div>
 
-        <RadioGroup.Root
-          name={fields.plusOneFoodSpecial.name}
-          className="lg:px-[12rem] flex gap-5 flex-col"
+        <div
+          className={cx(
+            "lg:px-[12rem] flex gap-5 flex-col",
+            fields.plusOne.value !== "true" && "opacity-50 cursor-not-allowed"
+          )}
         >
-          <RadioGroup.Label className="text-subtitle-s-mobile lg:text-subtitle-s">
+          <h2 className="text-subtitle-s-mobile lg:text-subtitle-s">
             {translations.confirmation_title_5}
-          </RadioGroup.Label>
+          </h2>
 
-          <div className="flex gap-5 mt-3">
+          <RadioGroup.Root
+            name={fields.plusOneFoodSpecial.name}
+            defaultValue={fields.plusOneFoodSpecial.initialValue}
+            className="flex gap-4"
+            disabled={fields.plusOne.value !== "true"}
+          >
             {[
-              translations.confirmation_cta_yes_5,
-              translations.confirmation_cta_no_5,
+              { label: translations.confirmation_cta_no_5, value: "false" },
+              { label: translations.confirmation_cta_yes_5, value: "true" },
             ].map((item) => (
               <RadioGroup.Item
-                key={item}
-                value={item}
+                key={item.value}
+                value={item.value}
                 className={cx(
-                  "flex items-center gap-2 cursor-pointer text-button-mobile lg:text-button",
+                  "flex items-center gap-2 text-button-mobile lg:text-button w-max",
                   "data-[state=checked]:bg-blue data-[state=checked]:text-white",
-                  "shadow-[0_4px_8.7px_0_rgba(0,0,0,0.25)] px-[1.875rem] pt-2.5 pb-2 rounded-full"
+                  "shadow-[0_4px_8.7px_0_rgba(0,0,0,0.25)] px-[1.875rem] pt-2.5 pb-2 rounded-full",
+                  fields.plusOne.value === "true"
+                    ? "cursor-pointer"
+                    : "cursor-not-allowed  "
                 )}
               >
-                <RadioGroup.ItemText>{item}</RadioGroup.ItemText>
-                <RadioGroup.ItemHiddenInput name="plusOneFoodSpecial" />
+                <RadioGroup.ItemText>{item.label}</RadioGroup.ItemText>
+                <RadioGroup.ItemHiddenInput />
               </RadioGroup.Item>
             ))}
-          </div>
-        </RadioGroup.Root>
+          </RadioGroup.Root>
+          {fields.plusOneFoodSpecial.errors && (
+            <span className="text-[red] text-base-mobile lg:text-[0.875rem]">
+              {fields.plusOneFoodSpecial.errors}
+            </span>
+          )}
+        </div>
 
         <FormField
           label={translations.confirmation_title_6}
-          className="lg:px-[12rem]"
+          errors={fields.plusOneFoodSpecialInput.errors}
+          className={cx(
+            "lg:px-[12rem]",
+            fields.plusOneFoodSpecial.value !== "true" &&
+              "opacity-50 cursor-not-allowed"
+          )}
         >
           <input
             placeholder={translations.confirmation_placeholder_6}
             {...getInputProps(fields.plusOneFoodSpecialInput, { type: "text" })}
             className="text-base-mobile lg:text-base w-full border-b-[1px] my-4 pb-1"
+            disabled={fields.plusOneFoodSpecial.value !== "true"}
           />
         </FormField>
 
         <FormField
           label={translations.confirmation_title_7}
+          errors={fields.song.errors}
           className="lg:px-[12rem]"
         >
           <input

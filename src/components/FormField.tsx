@@ -12,7 +12,7 @@ export type FormFieldProps = {
 export function FormField({
   label,
   children,
-  // errors,
+  errors,
   className,
   labelClassName,
 }: FormFieldProps) {
@@ -25,7 +25,7 @@ export function FormField({
       </div>
 
       {children}
-      {/* <InputError>{errors}</InputError> */}
+      <span className="text-[red] text-base-mobile lg:text-[0.875rem]">{errors}</span>
     </label>
   )
 }
