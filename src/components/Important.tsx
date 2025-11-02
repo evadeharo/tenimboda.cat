@@ -2,10 +2,12 @@ import { useState } from "react";
 import { translations } from "../lib/texts";
 import Grid from "./Grid";
 import Markdown from "./Markdown";
+import { useUser } from "../context/UserContext";
 
 export default function Important() {
   const [hover, setHover] = useState<boolean>(false);
   const [pos, setPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const { user } = useUser();
 
   return (
     <Grid
@@ -60,7 +62,10 @@ export default function Important() {
             ),
           }}
         >
-          {translations.important_text}
+          {translations.important_text.replace(
+            "{nomConvidat}",
+            user?.name ?? "amic"
+          )}
         </Markdown>
         <Markdown
           components={{
@@ -79,7 +84,11 @@ export default function Important() {
         </Markdown>
       </div>
 
-      <img src="images/spray/spray_bottom.png" className="absolute inset-0 -z-10 lg:hidden" draggable={false} />
+      <img
+        src="images/spray/spray_bottom.png"
+        className="absolute inset-0 -z-10 lg:hidden"
+        draggable={false}
+      />
     </Grid>
   );
 }

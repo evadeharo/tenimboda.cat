@@ -1,19 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FormFirstScreen } from "../components/FormFirstScreen";
 import { FormThanksScreen } from "../components/FormThanksScreen";
 import { FormScreen } from "../components/FormScreen";
-import { useNavigate } from "react-router-dom";
 
-export default function FormPage({ id }: { id: string }) {
-  // TODO: do something with id
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!id) {
-      navigate("/", { replace: true });
-    }
-  }, [id, navigate]);
-
+export default function FormPage() {
   const [stepId, setStepId] = useState<"welcome" | "form" | "thanks">(
     "welcome"
   );

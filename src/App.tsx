@@ -1,25 +1,43 @@
+import { useEffect } from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import FormPage from "./pages/FormPage";
-
-const validIds = ["a", "b"]; // TODO: export valid id's
+import { UserProvider, useUser } from "./context/UserContext";
+import { invites } from "./lib/constants";
 
 function ProtectedConfirmation() {
   const params = new URLSearchParams(window.location.search);
   const id = params.get("userId");
+  const { user, setUser } = useUser();
 
-  const isValid = id && validIds.includes(id);
+  const guest = invites.find((c) => c.userId === id);
 
-  return isValid ? <FormPage id={id} /> : <Navigate to="/" replace />;
+  useEffect(() => {
+    if (guest) {
+      setUser(guest);
+    }
+  }, [guest, setUser]);
+
+  if (!guest) {
+    return <Navigate to="/" replace />;
+  }
+
+  if (!user) {
+    return <div>Cargando...</div>;
+  }
+
+  return <FormPage />;
 }
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/confirmation" element={<ProtectedConfirmation />} />
-      </Routes>
-    </BrowserRouter>
+    <UserProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/confirmation" element={<ProtectedConfirmation />} />
+        </Routes>
+      </BrowserRouter>
+    </UserProvider>
   );
 }

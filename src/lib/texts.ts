@@ -51,7 +51,7 @@ export const translations = {
 
   // confirmation
   confirmation_title_1:
-    "Hola ${nomConvidat}! Estem molt contents de poder comptar amb tu el pròxim 11 d'abril.",
+    "Hola {nomConvidat}! Estem molt contents de poder comptar amb tu el pròxim 11 d'abril.",
   confirmation_text_1:
     "Ara necessitarem que responguis unes poques preguntes per a poder garantir que tot rutlli com cal aquell dia.",
 
@@ -67,9 +67,9 @@ export const translations = {
     "Tingues en compte que aquesta pregunta no és per a respondre si hi ha alguna cosa que no t'agrada menjar. Sinó que és per a gent que realment no pot menjar un aliment per motius mèdics.",
   confirmation_title_3: "Digue'ns quin és l'aliment que no pots menjar",
   confirmation_placeholder_3: "El que no puc menjar és...",
-  confirmation_title_4: "Vindrà ${nomAcompanyant} amb tu?*",
+  confirmation_title_4: "Vindrà {nomAcompanyant} amb tu?*",
   confirmation_cta_no: "No podrà :(",
-  confirmation_cta_yes: "Està il·lusionat!",
+  confirmation_cta_yes: "No s'ho perd! <3",
   confirmation_title_5:
     "El teu acompanyant té alguna intolerància, al·lèrgia o restricció alimentària?",
   confirmation_text_5:

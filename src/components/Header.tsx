@@ -1,6 +1,7 @@
 import { cx } from "class-variance-authority";
 import { translations } from "../lib/texts";
 import Button from "./Button";
+import { useUser } from "../context/UserContext";
 
 function ButtonNavigation({
   text,
@@ -30,12 +31,14 @@ const navItems = [
 ];
 
 export default function Header() {
+  const { user } = useUser()
+
   return (
     <>
       <div className="bg-gradient-to-b from-yellow to-transparent fixed top-0 left-0 w-full h-[12rem] lg:hidden" />
       <nav className="fixed top-[2rem] end-[1rem] lg:top-[2.45rem] lg:end-[2.5rem] z-20 flex flex-wrap lg:flex-col gap-[0.8rem] items-end justify-end">
         <Button asChild>
-          <a href="/confirmation">{translations.cta_confirmation} </a>
+          <a href={`/confirmation?userId=${user?.userId}`}>{translations.cta_confirmation} </a>
         </Button>
         {navItems.map((item, i) => (
           <ButtonNavigation

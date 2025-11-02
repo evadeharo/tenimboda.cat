@@ -1,3 +1,4 @@
+import { useUser } from "../context/UserContext";
 import { translations } from "../lib/texts";
 import Button from "./Button";
 
@@ -8,6 +9,8 @@ export function FormFirstScreen({
   onClick: () => void;
   closeClick: () => void;
 }) {
+  const { user } = useUser();
+
   return (
     <section className="flex gap-6 flex-col">
       <div className="w-full flex justify-end">
@@ -17,7 +20,10 @@ export function FormFirstScreen({
       </div>
       <div className="lg:px-[12rem] flex gap-5 flex-col">
         <h2 className="text-subtitle-s-mobile lg:text-subtitle-s text-center">
-          {translations.confirmation_title_1}
+          {translations.confirmation_title_1.replace(
+            "{nomConvidat}",
+            user?.name ?? "amic"
+          )}
         </h2>
         <p className="text-center text-base-mobile lg:text-base">
           {translations.confirmation_text_1}
