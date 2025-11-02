@@ -1,16 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FormFirstScreen } from "../components/FormFirstScreen";
 import { FormThanksScreen } from "../components/FormThanksScreen";
 import { FormScreen } from "../components/FormScreen";
+import { useNavigate } from "react-router-dom";
 
-export default function FormPage() {
+export default function FormPage({ id }: { id: string }) {
+  // TODO: do something with id
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!id) {
+      navigate("/", { replace: true });
+    }
+  }, [id, navigate]);
+
   const [stepId, setStepId] = useState<"welcome" | "form" | "thanks">(
     "welcome"
   );
 
   return (
     <main className="bg-yellow min-h-screen w-full grid place-items-center">
-      <div className="bg-white w-[65%] rounded-[3.125rem] shadow-[0_4px_8.7px_0_rgba(0,0,0,0.25)] p-[3rem] my-28">
+      <div className="bg-white w-[90%] lg:w-[65%] rounded-[3.125rem] shadow-[0_4px_8.7px_0_rgba(0,0,0,0.25)] p-[3rem] my-28">
         {stepId === "welcome" && (
           <FormFirstScreen
             onClick={() => setStepId("form")}
