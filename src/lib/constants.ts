@@ -1,4 +1,4 @@
-export const convidats = [
+export const invites = [
   { name: "Manel", userId: "INV-62B82B" },
   { name: "Laura", userId: "INV-F3EE47" },
   { name: "Pau", userId: "INV-3BEE05" },
