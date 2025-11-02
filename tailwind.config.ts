@@ -67,7 +67,6 @@ export default {
       "text-base-mobile": "text-[0.9rem] tracking-normal font-inter",
       "text-button-mobile": "text-[0.9rem] leading-none font-black tracking-normal font-roca",
       "text-cta-mobile": "text-[0.9rem] tracking-normal font-roca hover:underline",
-
     }),
   ],
 } satisfies Config;
