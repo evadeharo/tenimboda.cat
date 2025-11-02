@@ -22,7 +22,13 @@ export default function Hero() {
         </div>
       </div>
 
-      <img src="images/spray/spray_hero.png" className="absolute inset-0 -z-10" draggable={false} />
+      <img
+        src="images/spray/spray_hero.png"
+        className="absolute inset-0 -z-10"
+        draggable={false}
+        loading="eager"
+        fetchPriority="high"
+      />
       <ParallaxIcon
         src="images/draws/hero_1.png"
         mouseX={mouseX}
