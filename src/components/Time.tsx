@@ -1,10 +1,6 @@
 import { translations } from "../lib/texts";
 import Grid from "./Grid";
 import Markdown from "./Markdown";
-import icon1 from "../assets/images/draws/time_1.png";
-import icon2 from "../assets/images/draws/time_2.png";
-import icon3 from "../assets/images/draws/time_3.png";
-import icon4 from "../assets/images/draws/time_4.png";
 import { useMouseParallax } from "../lib/useMouseParallax";
 import { ParallaxIcon } from "./ParallaxIcon";
 
@@ -64,25 +60,25 @@ export default function Time() {
       </div>
 
       <ParallaxIcon
-        src={icon1}
+        src="images/draws/time_1.png"
         mouseX={mouseX}
         mouseY={mouseY}
         className="absolute top-[9rem] left-[1rem] lg:top-[14.25rem] lg:left-[6.25rem] -z-0 w-20 lg:w-24"
       />
       <ParallaxIcon
-        src={icon2}
+        src="images/draws/time_2.png"
         mouseX={mouseX}
         mouseY={mouseY}
         className="absolute top-0 left-[11rem] lg:left-[30rem] -z-0 w-20 lg:w-24"
       />
       <ParallaxIcon
-        src={icon3}
+        src="images/draws/time_3.png"
         mouseX={mouseX}
         mouseY={mouseY}
         className="absolute top-[16rem] right-[2rem] lg:top-[10rem] lg:right-[30rem] -z-0 w-20 lg:w-28"
       />
       <ParallaxIcon
-        src={icon4}
+        src="images/draws/time_4.png"
         mouseX={mouseX}
         mouseY={mouseY}
         className="absolute -bottom-[4rem] right-[2rem] lg:bottom-[8rem] lg:right-[15rem] -z-0 w-24 lg:w-32"

@@ -1,4 +1,3 @@
-import image from "../assets/images/spray/spray_bottom.png"
 import { translations } from "../lib/texts";
 import Grid from "./Grid";
 import Markdown from "./Markdown";
@@ -27,7 +26,7 @@ export default function Present() {
         </Markdown>
       </div>
 
-      <img src={image} className="absolute inset-0 -z-10" draggable={false} />
+      <img src="images/spray/spray_bottom.png" className="absolute inset-0 -z-10" draggable={false} />
     </Grid>
   );
 }

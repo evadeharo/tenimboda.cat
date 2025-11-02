@@ -1,4 +1,3 @@
-import image from "../assets/images/spray/spray_bottom.png";
 import { useState } from "react";
 import { translations } from "../lib/texts";
 import Grid from "./Grid";
@@ -80,7 +79,7 @@ export default function Important() {
         </Markdown>
       </div>
 
-      <img src={image} className="absolute inset-0 -z-10 lg:hidden" draggable={false} />
+      <img src="images/spray/spray_bottom.png" className="absolute inset-0 -z-10 lg:hidden" draggable={false} />
     </Grid>
   );
 }

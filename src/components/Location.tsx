@@ -1,8 +1,4 @@
 import Grid from "./Grid";
-import image from "../assets/images/spray/spray_mid.png";
-import icon1 from "../assets/images/draws/location_1.png";
-import icon2 from "../assets/images/draws/location_2.png";
-import icon3 from "../assets/images/draws/location_3.png";
 import Markdown from "./Markdown";
 import { translations } from "../lib/texts";
 import { ParallaxIcon } from "./ParallaxIcon";
@@ -34,21 +30,21 @@ export default function Location() {
         </Markdown>
       </div>
 
-      <img src={image} alt="" className="absolute left-0 top-0 -z-10" />
+      <img src="images/spray/spray_mid.png" alt="" className="absolute left-0 top-0 -z-10" />
       <ParallaxIcon
-        src={icon1}
+        src="images/draws/location_1.png"
         mouseX={mouseX}
         mouseY={mouseY}
         className="absolute top-[8rem] lg:top-[4rem] left-[8rem] lg:left-[5rem] -z-0 w-20 lg:w-28"
       />
       <ParallaxIcon
-        src={icon2}
+        src="images/draws/location_2.png"
         mouseX={mouseX}
         mouseY={mouseY}
         className="absolute top-0 left-0 lg:top-[12rem] lg:left-[30rem] -z-0 w-[4.375rem] lg:w-24"
       />
       <ParallaxIcon
-        src={icon3}
+        src="images/draws/location_3.png"
         mouseX={mouseX}
         mouseY={mouseY}
         className="absolute top-0 right-0 lg:top-[2rem] lg:right-[32rem] -z-0 w-[4.375rem] lg:w-28"
