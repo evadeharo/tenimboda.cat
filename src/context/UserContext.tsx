@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { invites } from "../lib/constants";
 
-type User = {
+export type User = {
   name: string;
   userId: string;
   plusOneName?: string;

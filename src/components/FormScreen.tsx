@@ -7,12 +7,13 @@ import { getFormProps, getInputProps, useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
 import { FormField } from "./FormField";
 import { useUser } from "../context/UserContext";
+import { submitConfirmation, type ConfirmationData } from "../api/confirmation";
 
 const ConfirmationSchema = z
   .object({
     foodSpecial: z.string(),
     foodSpecialInput: z.string().optional(),
-    plusOne: z.string(),
+    plusOne: z.string().optional(),
     plusOneFoodSpecial: z.string().optional(),
     plusOneFoodSpecialInput: z.string().optional(),
     song: z.string().optional(),
@@ -66,6 +67,7 @@ export function FormScreen({
       const result = parseWithZod(formData, { schema: ConfirmationSchema });
       console.log("FormData:", Object.fromEntries(formData.entries()));
       console.log("Resultado parseado:", result);
+      submitConfirmation(result.payload as ConfirmationData, user);
     },
   });
 
@@ -138,7 +140,10 @@ export function FormScreen({
         {user?.plusOneName && (
           <div className="lg:px-[12rem] flex gap-5 flex-col">
             <h2 className="text-subtitle-s-mobile lg:text-subtitle-s">
-              {translations.confirmation_title_4.replace("{nomAcompanyant}", user.plusOneName)}
+              {translations.confirmation_title_4.replace(
+                "{nomAcompanyant}",
+                user.plusOneName
+              )}
             </h2>
 
             <RadioGroup.Root
