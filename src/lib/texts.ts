@@ -34,7 +34,7 @@ export const translations = {
     },
     {
       title: "On puc allotjar-me?",
-      text: `Si vols fer nit a La Cerdanya et recomanem que reservis l'hotel com més aviat millor.\nTingues en compte que aquell cap de setmana hi ha mundial d'hoquei a Puigcerdà, els allotjaments estan força plens.\nNosaltres us proposem [l'Hotel Llívia](https://www.lliviahotel.com/es/). Trucant al número de telèfon (+34)972621252 i **dient que reserveu pel casament de l'Eva i l'Oriol** us mantindran el següent preu sempre que tinguin disponibilitat:\nDivendres **10/04**: **87€** per nit\nDissabte **11/04**: **117€** per nit\nTotes les nostres habitacions són dobles.\nEn cas que vulguin afegir l'esmorzar, el preu és de 7,45€ per persona i dia.`,
+      text: `Si vols fer nit a La Cerdanya et recomanem que reservis l'hotel com més aviat millor.\nTingues en compte que aquell cap de setmana hi ha mundial d'hoquei a Puigcerdà, els allotjaments estan força plens.\nNosaltres us proposem [l'Hotel Llívia](https://www.lliviahotel.com/es/). Trucant al número de telèfon (+34)972621252 i **dient que reserveu pel casament de l'Eva i l'Oriol** us mantindran el següent preu sempre que tinguin disponibilitat:\nDivendres **10/04**: **87€** per nit\nDissabte **11/04**: **117€** per nit\nTotes les nostres habitacions són dobles.\nPodeu afegir l'esmorzar per 7,45€ per persona i dia si ho desitjeu.`,
     },
     {
       title: "On puc aparcar el cotxe?",
