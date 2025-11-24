@@ -88,6 +88,14 @@ export const translations = {
   confirmation_cta_yes_7: "Continua",
   confirmation_send_form: "Confirmo! Envia el formulari",
 
+  // FormScreens
+  cta_back_form: "Torna al formulari",
+  warning_title: "Compte! Perdrás totes les dades!",
+  warning_text: "Confirmes que vols sortir del formulari?",
+  cta_leave_form: "Sortir del formulari",
+  error_title: "Ops! Sembla que hi ha hagut un error",
+  error_text: "Sembla que alguna cosa no ha anat bé. Torna a probar o contacta'ns per a més informació.",
+
   thanks_title:
     "Moltes gràcies ${nomConvidat}! La teva assistència ha estat confirmada.",
   thanks_text:

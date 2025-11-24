@@ -1,6 +1,6 @@
-import { useUser } from "../context/UserContext";
-import { translations } from "../lib/texts";
-import Button from "./Button";
+import { useUser } from "../../context/UserContext";
+import { translations } from "../../lib/texts";
+import Button from "../Button";
 
 export function FormFirstScreen({
   onClick,

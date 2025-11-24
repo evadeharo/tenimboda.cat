@@ -1,13 +1,14 @@
 import { z } from "zod";
-import { translations } from "../lib/texts";
-import Button from "./Button";
+import { translations } from "../../lib/texts";
+import Button from "../Button";
 import { RadioGroup } from "@ark-ui/react";
 import { cx } from "class-variance-authority";
 import { getFormProps, getInputProps, useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
 import { FormField } from "./FormField";
-import { useUser } from "../context/UserContext";
-import { confirmation, type ConfirmationData } from "../api/confirmation";
+import { useUser } from "../../context/UserContext";
+import { type ConfirmationData } from "../../api/confirmation";
+import { useFormContext } from "../../context/useFormContext";
 
 const ConfirmationSchema = z
   .object({
@@ -51,33 +52,67 @@ const ConfirmationSchema = z
 export function FormScreen({
   onClick,
   closeClick,
+  setStepId,
 }: {
   onClick: () => void;
   closeClick: () => void;
+  setStepId: (e: "welcome" | "form" | "thanks" | "warning" | "error") => void;
 }) {
   const { user } = useUser();
+  const { formData, setFormData } = useFormContext();
 
   const [form, fields] = useForm({
     id: "confirmation-form",
+    defaultValue: formData,
     shouldValidate: "onBlur",
     shouldRevalidate: "onInput",
     onValidate({ formData }) {
       return parseWithZod(formData, { schema: ConfirmationSchema });
     },
-    onSubmit(event) {
+    onSubmit: async (event) => {
       event.preventDefault();
+
       const formData = new FormData(event.currentTarget);
       const result = parseWithZod(formData, { schema: ConfirmationSchema });
-      console.log("FormData:", Object.fromEntries(formData.entries()));
-      console.log("Resultado parseado:", result);
-      confirmation(result.payload as ConfirmationData);
+
+      if (result.status !== "success") {
+        setStepId("error");
+        return;
+      }
+
+      const payload = result.payload as ConfirmationData;
+
+      try {
+        setFormData(payload);
+        onClick();
+      } catch (err) {
+        console.error(err);
+        setStepId("error");
+      }
     },
   });
+
+  function closeClickAction() {
+    const currentData = {
+      foodSpecial: fields.foodSpecial.value,
+      foodSpecialInput: fields.foodSpecialInput.value,
+      plusOne: fields.plusOne.value,
+      plusOneFoodSpecial: fields.plusOneFoodSpecial.value,
+      plusOneFoodSpecialInput: fields.plusOneFoodSpecialInput.value,
+      song: fields.song.value,
+      userId: fields.userId.value,
+      name: fields.name.value,
+      plusOneName: fields.plusOneName.value,
+    };
+
+    setFormData(currentData);
+    closeClick();
+  }
 
   return (
     <section className="flex gap-6 flex-col">
       <div className="w-full flex justify-end">
-        <Button variant="text-blue" onClick={closeClick}>
+        <Button variant="text-blue" onClick={closeClickAction}>
           {translations.cta_close}
         </Button>
       </div>
@@ -272,7 +307,7 @@ export function FormScreen({
         </FormField>
 
         <div className="lg:px-[12rem] flex justify-center">
-          <Button type="submit" variant="bg-blue" onClick={onClick}>
+          <Button type="submit" variant="bg-blue">
             {translations.confirmation_send_form}
           </Button>
         </div>
