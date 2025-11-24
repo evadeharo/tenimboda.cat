@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import FormPage from "./pages/FormPage";
 import { UserProvider, useUser } from "./context/UserContext";
 import { invites } from "./lib/constants";
+import { FormProvider } from "./context/useFormContext";
 
 function ProtectedConfirmation() {
   const params = new URLSearchParams(window.location.search);
@@ -32,12 +33,14 @@ function ProtectedConfirmation() {
 export default function App() {
   return (
     <UserProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/confirmation" element={<ProtectedConfirmation />} />
-        </Routes>
-      </BrowserRouter>
+      <FormProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/confirmation" element={<ProtectedConfirmation />} />
+          </Routes>
+        </BrowserRouter>
+      </FormProvider>
     </UserProvider>
   );
 }

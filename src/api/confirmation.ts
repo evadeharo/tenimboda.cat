@@ -1,13 +1,15 @@
-//TODO: warn! This is just an example
- 
 const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 export type ConfirmationData = {
-  id: string;
+  foodSpecial: string;
+  plusOne: string;
+  foodSpecialInput?: string | undefined;
+  plusOneFoodSpecial?: string | undefined;
+  plusOneFoodSpecialInput?: string | undefined;
+  song?: string | undefined;
   name: string;
-  attending: boolean;
-  guests?: number;
-  message?: string;
+  userId: string;
+  plusOneName?: string | undefined;
 };
 
 export async function apiFetch<T>(
@@ -34,9 +36,9 @@ export async function apiFetch<T>(
   return response.json() as Promise<T>;
 }
 
-export async function submitConfirmation(data: ConfirmationData) {
+export async function confirmation(data: ConfirmationData) {
   return apiFetch<{ success: boolean }>("/confirmation", {
     method: "POST",
-    body: JSON.stringify(data),
+    body: JSON.stringify({ data }),
   });
 }

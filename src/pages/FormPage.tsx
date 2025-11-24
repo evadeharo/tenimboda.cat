@@ -1,12 +1,18 @@
 import { useState } from "react";
-import { FormFirstScreen } from "../components/FormFirstScreen";
-import { FormThanksScreen } from "../components/FormThanksScreen";
-import { FormScreen } from "../components/FormScreen";
+import { FormThanksScreen } from "../components/Form/FormThanksScreen";
+import { FormScreen } from "../components/Form/FormScreen";
+import { WarningScreen } from "../components/Form/WarningScreen";
+import { useNavigate } from "react-router-dom";
+import { ErrorScreen } from "../components/Form/ErrorScreen";
+import { FormFirstScreen } from "../components/Form/FormFirstScreen";
+import { useUser } from "../context/UserContext";
 
 export default function FormPage() {
-  const [stepId, setStepId] = useState<"welcome" | "form" | "thanks">(
-    "welcome"
-  );
+  const [stepId, setStepId] = useState<
+    "welcome" | "form" | "thanks" | "warning" | "error"
+  >("welcome");
+  const navigate = useNavigate();
+  const { user } = useUser();
 
   return (
     <main className="bg-yellow min-h-screen w-full grid place-items-center">
@@ -14,26 +20,29 @@ export default function FormPage() {
         {stepId === "welcome" && (
           <FormFirstScreen
             onClick={() => setStepId("form")}
-            closeClick={() => window.alert("Cuidado!")}
+            closeClick={() => setStepId("warning")}
           />
         )}
         {stepId === "form" && (
           <FormScreen
-            closeClick={() => window.alert("Cuidado!")}
-            onClick={() => console.log("sent")}
-            // onClick={() => setStepId("thanks")}
+            closeClick={() => setStepId("warning")}
+            onClick={() => setStepId("thanks")}
+            setStepId={setStepId}
           />
         )}
-        {stepId === "thanks" && (
-          <FormThanksScreen
-            onClick={function (): void {
-              throw new Error("Function not implemented.");
-            }}
-            closeClick={function (): void {
-              throw new Error("Function not implemented.");
-            }}
+        {stepId === "warning" && (
+          <WarningScreen
+            onClick={() => navigate(`/?userId${user?.userId}`)}
+            closeClick={() => setStepId("form")}
           />
         )}
+        {stepId === "error" && (
+          <ErrorScreen
+            closeClick={() => setStepId("form")}
+            onClick={() => navigate(`/?userId${user?.userId}`)}
+          />
+        )}
+        {stepId === "thanks" && <FormThanksScreen />}
       </div>
     </main>
   );

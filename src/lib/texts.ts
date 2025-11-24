@@ -25,7 +25,7 @@ export const translations = {
     { hour: "19h", text: "Festa, ball i barra lliure" },
   ],
   present_title: `Volem fer un **viatge**`,
-  present_text: `Com bé ja sabeu, l'any passat vam mudar-nos a viure junts. Ara tenim un piset molt acollidor i ben preparat pel nostre dia a dia. Tot això gràcies a molts de vosaltres, que ens heu ajudat amb un munt de coses: pintar, tapar forats, desmuntar i muntar mobles, compres vàries, electrodomèstics, cortines, tèxtils, decoració i fins i tot el 'maleït' donut (que tant ens va costar trobar!!!).\n Aquesta invitació és perquè volem celebrar el nostre compromís amb tu, i no ens cal cap regal. Si tot i així vols participar en el nostre camí, pots donar-nos un cop de mà perquè la lluna de mel sigui encara més inoblidable ✨\n Pots fer una transferència al següent número de compte\n IBAN: ES91 XXXX XXXX XXXX XXXX XXXX`,
+  present_text: `Com bé ja sabeu, l'any passat vam mudar-nos a viure junts. Ara tenim un piset molt acollidor i ben preparat pel nostre dia a dia. Tot això gràcies a molts de vosaltres, que ens heu ajudat amb un munt de coses: pintar, tapar forats, desmuntar i muntar mobles, compres vàries, electrodomèstics, cortines, tèxtils, decoració i fins i tot el 'maleït' donut (que tant ens va costar trobar!!!).\n Aquesta invitació és perquè volem celebrar el nostre compromís amb tu, i no ens cal cap regal. Si tot i així vols participar en el nostre camí, pots donar-nos un cop de mà perquè la lluna de mel sigui encara més inoblidable ✨\n Pots fer una transferència al següent número de compte\n IBAN: ES58 1465 0120 3317 5722 5377`,
   faqs_title: "FAQS",
   faqs_content: [
     {
@@ -34,7 +34,7 @@ export const translations = {
     },
     {
       title: "On puc allotjar-me?",
-      text: `Si vols fer nit a La Cerdanya et recomanem que reservis l'hotel com més aviat millor.\nPots trucar a l'hotel Bernat de So i preguntar per la disponibilitat per a qualsevol dia des del divendres fins al diumenge indicant que és per motiu del casament de l'Oriol i l'Eva.\nEl cost nit aproximat és de 100€ per habitació doble. Trucant directament a l'hotel us donaran més informació. Tingueu en compte que és un hotel familiar i no massa gran, la disponibilitat és molt reduïda.\nSi preferiu buscar vosaltres mateixes altres opcions a Llívia i voltants hi ha diversos hotels, hostals i càmpings que també podeu consultar.`,
+      text: `Si vols fer nit a La Cerdanya et recomanem que reservis l'hotel com més aviat millor.\nTingues en compte que aquell cap de setmana hi ha mundial d'hoquei a Puigcerdà, els allotjaments estan força plens.\nNosaltres us proposem [l'Hotel Llívia](https://www.lliviahotel.com/es/). Trucant al número de telèfon (+34)972621252 i **dient que reserveu pel casament de l'Eva i l'Oriol** us mantindran el següent preu sempre que tinguin disponibilitat:\nDivendres **10/04**: **87€** per nit\nDissabte **11/04**: **117€** per nit\nTotes les nostres habitacions són dobles.\nPodeu afegir l'esmorzar per 7,45€ per persona i dia si ho desitjeu.`,
     },
     {
       title: "On puc aparcar el cotxe?",
@@ -44,6 +44,10 @@ export const translations = {
       title: "Tinc necesitats especials amb el menjar",
       text: "Cap problema! Quan facis click en la confirmació d'assistència et farem diverses preguntes. Entre elles si tens alguna intolerància, al·lèrgia o restricció alimentària.",
     },
+    {
+      title: "I si tinc algún dubte extra o d'últim moment?",
+      text: "Tenim la súper sort de comptar amb la Clàudia i en Jordi d'[Emocions de Blanc](https://emocionsdeblanc.com/). Qualsevol dubte d'últim moment els hi podeu fer directament a ells, son magnífics i segur que podran resoldre qualsevol cosa que pugui sorgir!"
+    }
   ],
   footer_reminder: `No t'oblidis de confirmar assistència.\n Pots fer-ho fent [clic aquí](/confirmation)`,
   footer_text: `**I quan tot hagi acabat on recupero els records d'aquell dia?**\n Després de gaudir-ho al màxim posarem en aquest espai un enllaç a la galeria digital que ens facilitarà el fotògraf.\n També t'animem a compartir tots els records que hagis generat en aquest [álbum compartit](https://photos.app.goo.gl/QabfrYnaqy7Tatu46) que omplirem entre tots i totes!`,
@@ -83,6 +87,14 @@ export const translations = {
   confirmation_cta_no_7: "Millor no",
   confirmation_cta_yes_7: "Continua",
   confirmation_send_form: "Confirmo! Envia el formulari",
+
+  // FormScreens
+  cta_back_form: "Torna al formulari",
+  warning_title: "Compte! Perdrás totes les dades!",
+  warning_text: "Confirmes que vols sortir del formulari?",
+  cta_leave_form: "Sortir del formulari",
+  error_title: "Ops! Sembla que hi ha hagut un error",
+  error_text: "Sembla que alguna cosa no ha anat bé. Torna a probar o contacta'ns per a més informació.",
 
   thanks_title:
     "Moltes gràcies ${nomConvidat}! La teva assistència ha estat confirmada.",
