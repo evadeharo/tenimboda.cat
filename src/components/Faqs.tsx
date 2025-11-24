@@ -27,7 +27,7 @@ export default function Faqs() {
         </h2>
         <Accordion.Root
           defaultValue={[translations.faqs_content[0].title]}
-          className="flex flex-col gap-6 pb-44"
+          className="flex flex-col gap-8 pb-44"
         >
           {translations.faqs_content.map((item) => (
             <Accordion.Item key={item.title} value={item.title}>
@@ -41,7 +41,7 @@ export default function Faqs() {
                 <Markdown
                   components={{
                     p: ({ children }) => (
-                      <p className="text-base-mobile lg:text-base mt-3 lg:mt-0">{children}</p>
+                      <p className="text-base-mobile lg:text-base mt-3 lg:mt-1">{children}</p>
                     ),
                     br: () => <span className="block h-2" />,
                     strong: ({ children }) => (
