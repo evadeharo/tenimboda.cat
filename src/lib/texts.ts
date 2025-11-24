@@ -25,7 +25,7 @@ export const translations = {
     { hour: "19h", text: "Festa, ball i barra lliure" },
   ],
   present_title: `Volem fer un **viatge**`,
-  present_text: `Com bé ja sabeu, l'any passat vam mudar-nos a viure junts. Ara tenim un piset molt acollidor i ben preparat pel nostre dia a dia. Tot això gràcies a molts de vosaltres, que ens heu ajudat amb un munt de coses: pintar, tapar forats, desmuntar i muntar mobles, compres vàries, electrodomèstics, cortines, tèxtils, decoració i fins i tot el 'maleït' donut (que tant ens va costar trobar!!!).\n Aquesta invitació és perquè volem celebrar el nostre compromís amb tu, i no ens cal cap regal. Si tot i així vols participar en el nostre camí, pots donar-nos un cop de mà perquè la lluna de mel sigui encara més inoblidable ✨\n Pots fer una transferència al següent número de compte\n IBAN: ES91 XXXX XXXX XXXX XXXX XXXX`,
+  present_text: `Com bé ja sabeu, l'any passat vam mudar-nos a viure junts. Ara tenim un piset molt acollidor i ben preparat pel nostre dia a dia. Tot això gràcies a molts de vosaltres, que ens heu ajudat amb un munt de coses: pintar, tapar forats, desmuntar i muntar mobles, compres vàries, electrodomèstics, cortines, tèxtils, decoració i fins i tot el 'maleït' donut (que tant ens va costar trobar!!!).\n Aquesta invitació és perquè volem celebrar el nostre compromís amb tu, i no ens cal cap regal. Si tot i així vols participar en el nostre camí, pots donar-nos un cop de mà perquè la lluna de mel sigui encara més inoblidable ✨\n Pots fer una transferència al següent número de compte\n IBAN: ES58 1465 0120 3317 5722 5377`,
   faqs_title: "FAQS",
   faqs_content: [
     {
