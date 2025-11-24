@@ -34,7 +34,7 @@ export const translations = {
     },
     {
       title: "On puc allotjar-me?",
-      text: `Si vols fer nit a La Cerdanya et recomanem que reservis l'hotel com més aviat millor.\nPots trucar a l'hotel Bernat de So i preguntar per la disponibilitat per a qualsevol dia des del divendres fins al diumenge indicant que és per motiu del casament de l'Oriol i l'Eva.\nEl cost nit aproximat és de 100€ per habitació doble. Trucant directament a l'hotel us donaran més informació. Tingueu en compte que és un hotel familiar i no massa gran, la disponibilitat és molt reduïda.\nSi preferiu buscar vosaltres mateixes altres opcions a Llívia i voltants hi ha diversos hotels, hostals i càmpings que també podeu consultar.`,
+      text: `Si vols fer nit a La Cerdanya et recomanem que reservis l'hotel com més aviat millor.\nTingues en compte que aquell cap de setmana hi ha mundial d'hoquei a Puigcerdà, els allotjaments estan força plens.\nNosaltres us proposem [l'Hotel Llívia](https://www.lliviahotel.com/es/). Trucant al número de telèfon (+34)972621252 i **dient que reserveu pel casament de l'Eva i l'Oriol** us mantindran el següent preu sempre que tinguin disponibilitat:\nDivendres **10/04**: **87€** per nit\nDissabte **11/04**: **117€** per nit\nTotes les nostres habitacions són dobles.\nEn cas que vulguin afegir l'esmorzar, el preu és de 7,45€ per persona i dia.`,
     },
     {
       title: "On puc aparcar el cotxe?",
@@ -44,6 +44,10 @@ export const translations = {
       title: "Tinc necesitats especials amb el menjar",
       text: "Cap problema! Quan facis click en la confirmació d'assistència et farem diverses preguntes. Entre elles si tens alguna intolerància, al·lèrgia o restricció alimentària.",
     },
+    {
+      title: "I si tinc algún dubte extra o d'últim moment?",
+      text: "Tenim la súper sort de comptar amb la Clàudia i en Jordi d'[Emocions de Blanc](https://emocionsdeblanc.com/). Qualsevol dubte d'últim moment els hi podeu fer directament a ells, son magnífics i segur que podran resoldre qualsevol cosa que pugui sorgir!"
+    }
   ],
   footer_reminder: `No t'oblidis de confirmar assistència.\n Pots fer-ho fent [clic aquí](/confirmation)`,
   footer_text: `**I quan tot hagi acabat on recupero els records d'aquell dia?**\n Després de gaudir-ho al màxim posarem en aquest espai un enllaç a la galeria digital que ens facilitarà el fotògraf.\n També t'animem a compartir tots els records que hagis generat en aquest [álbum compartit](https://photos.app.goo.gl/QabfrYnaqy7Tatu46) que omplirem entre tots i totes!`,
