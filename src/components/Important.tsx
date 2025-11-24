@@ -3,38 +3,58 @@ import { translations } from "../lib/texts";
 import Grid from "./Grid";
 import Markdown from "./Markdown";
 import { useUser } from "../context/UserContext";
+import {
+  AnimatePresence,
+  useMotionValue,
+  useSpring,
+  motion,
+} from "framer-motion";
 
 export default function Important() {
-  const [hover, setHover] = useState<boolean>(false);
-  const [pos, setPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [hover, setHover] = useState(false);
   const { user } = useUser();
 
-  return (
-    <Grid
-      className="min-h-screen flex items-end pb-[3.75rem] relative"
-      id="important"
-    >
-      {hover && (
-        <div
-          className="hidden lg:fixed pointer-events-none w-24 h-24 bg-blue rounded-full mix-blend-difference transition-transform duration-75"
-          style={{
-            left: `${pos.x - 48}px`,
-            top: `${pos.y - 48}px`,
-            transform: "translate3d(0, 0, 0)",
-          }}
-        />
-      )}
+  const mouseX = useMotionValue(400);
+  const mouseY = useMotionValue(0);
 
-      <div
-        className="col-span-4 lg:col-span-7 group cursor-pointer"
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
-        onMouseMove={(e) => setPos({ x: e.clientX, y: e.clientY })}
-      >
-        <div>
-          <h2 className="text-title-l-mobile lg:text-title-l">
-            {translations.important_title}
-          </h2>
+  const springX = useSpring(mouseX, { stiffness: 300, damping: 30 });
+  const springY = useSpring(mouseY, { stiffness: 300, damping: 30 });
+
+  return (
+    <Grid className="min-h-screen flex items-end pb-[3.75rem]" id="important">
+      <div className="col-span-3 col-start-2 overflow-hidden md:hidden">
+        <AnimatePresence>
+          {hover && (
+            <motion.img
+              src="images/hover/hover.jpg"
+              className="object-cover w-full"
+              draggable={false}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.3 }}
+            />
+          )}
+        </AnimatePresence>
+      </div>
+
+      <div className="col-span-4 lg:col-span-7 group">
+        <h2 className="text-title-l-mobile lg:text-title-l">
+          {translations.important_title}
+        </h2>
+        <div
+          className="relative"
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}
+          onMouseMove={(e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            mouseX.set(x);
+            mouseY.set(y);
+          }}
+          onClick={() => setHover(!hover)}
+        >
           <Markdown
             components={{
               p: ({ children }) => (
@@ -51,6 +71,29 @@ export default function Important() {
           >
             {translations.important_title2}
           </Markdown>
+          <AnimatePresence>
+            {hover && (
+              <motion.div
+                className="hidden md:block md:absolute pointer-events-none w-72 h-72 bg-blue rounded-full mix-blend-difference"
+                style={{
+                  x: springX,
+                  y: springY,
+                  translateX: "-50%",
+                  translateY: "-85%",
+                }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img
+                  src="images/hover/hover.jpg"
+                  className="object-cover w-full h-full"
+                  draggable={false}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
         <Markdown
