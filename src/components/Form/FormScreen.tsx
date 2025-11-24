@@ -7,7 +7,7 @@ import { getFormProps, getInputProps, useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
 import { FormField } from "./FormField";
 import { useUser } from "../../context/UserContext";
-import { type ConfirmationData } from "../../api/confirmation";
+import { confirmation, type ConfirmationData } from "../../api/confirmation";
 import { useFormContext } from "../../context/useFormContext";
 
 const ConfirmationSchema = z
@@ -83,8 +83,15 @@ export function FormScreen({
       const payload = result.payload as ConfirmationData;
 
       try {
+        const response = await confirmation(payload);
+
         setFormData(payload);
-        onClick();
+
+        if (response.success) {
+          onClick();
+        } else {
+          setStepId("error");
+        }
       } catch (err) {
         console.error(err);
         setStepId("error");
