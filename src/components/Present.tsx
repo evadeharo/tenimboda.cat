@@ -69,19 +69,21 @@ export default function Present() {
     >
       <AnimatePresence>
         {hover && (
-          <motion.img
-            src={images[currentImage]}
-            className="fixed top-1/2 left-1/2 w-[35vw] h-auto -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-            draggable={false}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          />
+          <div className="md:fixed md:top-1/2 md:left-1/2 md:w-[35vw] w-auto h-[25vh] md:h-auto md:-translate-x-1/2 md:-translate-y-1/2 col-span-3 col-start-2 overflow-hidden grid place-items-center">
+            <motion.img
+              src={images[currentImage]}
+              className="pointer-events-none object-contain h-full w-auto md:h-auto md:w-full"
+              draggable={false}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            />
+          </div>
         )}
       </AnimatePresence>
 
-      <div className="col-span-7 flex flex-col gap-7">
+      <div className="col-span-4 md:col-span-7 flex flex-col gap-7">
         <Markdown
           components={{
             p: ({ children }) => (
