@@ -87,7 +87,7 @@ export function FormScreen({
 
         setFormData(payload);
 
-        if (response.success) {
+        if (response.message) {
           onClick();
         } else {
           setStepId("error");
