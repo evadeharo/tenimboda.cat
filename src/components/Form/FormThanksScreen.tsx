@@ -12,7 +12,7 @@ export function FormThanksScreen() {
       <div className="lg:px-[12rem] flex gap-5 flex-col">
         <h2 className="text-subtitle-s-mobile lg:text-subtitle-s text-center">
           {translations.thanks_title.replace(
-            "{nomConvidat}",
+            "${nomConvidat}",
             user?.name ?? "amic"
           )}
         </h2>
