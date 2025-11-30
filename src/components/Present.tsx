@@ -136,7 +136,7 @@ export default function Present() {
                         </span>
                       }
                     >
-                      <div className="size-4 hover:text-blue">
+                      <div className="size-3 md:size-4 hover:text-blue">
                         <svg
                           width="100%"
                           height="100%"
