@@ -35,8 +35,8 @@ export default function Header() {
 
   return (
     <>
-      <div className="bg-gradient-to-b from-yellow to-transparent fixed top-0 left-0 w-full h-[12rem] lg:hidden" />
-      <nav className="fixed top-[2rem] end-[1rem] lg:top-[2.45rem] lg:end-[2.5rem] z-20 flex flex-wrap lg:flex-col gap-[0.8rem] items-end justify-end">
+      <div className="bg-gradient-to-b from-yellow to-transparent fixed top-0 left-0 w-full h-[12rem] lg:hidden z-30" />
+      <nav className="fixed top-[2rem] end-[1rem] lg:top-[2.45rem] lg:end-[2.5rem] z-40 flex flex-wrap lg:flex-col gap-[0.8rem] items-end justify-end">
         {user && (
           <Button asChild>
             <a href={`/confirmation?userId=${user?.userId}`}>

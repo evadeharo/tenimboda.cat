@@ -117,7 +117,7 @@ export function FormScreen({
   }
 
   return (
-    <section className="flex gap-6 flex-col">
+    <section className="flex gap-8 flex-col">
       <div className="w-full flex justify-end">
         <Button variant="text-blue" onClick={closeClickAction}>
           {translations.cta_close}
@@ -162,7 +162,7 @@ export function FormScreen({
                 className={cx(
                   "flex items-center gap-2 cursor-pointer text-button-mobile lg:text-button w-max",
                   "data-[state=checked]:bg-blue data-[state=checked]:text-white",
-                  "shadow-[0_4px_8.7px_0_rgba(0,0,0,0.25)] px-[1.875rem] pt-2.5 pb-2 rounded-full"
+                  "shadow-[0_4px_8.7px_0_rgba(0,0,0,0.25)] px-[1.2rem] md:px-[1.875rem] pt-2.5 pb-2 rounded-full"
                 )}
               >
                 <RadioGroup.ItemText>{item.label}</RadioGroup.ItemText>

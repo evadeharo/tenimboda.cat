@@ -41,7 +41,7 @@ export default function Faqs() {
                 <Markdown
                   components={{
                     p: ({ children }) => (
-                      <p className="text-base-mobile lg:text-base mt-3 lg:mt-1">{children}</p>
+                      <p className="text-base-mobile mt-3">{children}</p>
                     ),
                     br: () => <span className="block h-2" />,
                     strong: ({ children }) => (

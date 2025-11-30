@@ -8,7 +8,7 @@ export function FormThanksScreen() {
   const { user } = useUser();
 
   return (
-    <section className="flex gap-6 flex-col">
+    <section className="flex gap-8 flex-col">
       <div className="lg:px-[12rem] flex gap-5 flex-col">
         <h2 className="text-subtitle-s-mobile lg:text-subtitle-s text-center">
           {translations.thanks_title.replace(
