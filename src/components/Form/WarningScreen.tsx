@@ -9,7 +9,7 @@ export function WarningScreen({
   closeClick: () => void;
 }) {
   return (
-    <section className="flex gap-6 flex-col">
+    <section className="flex gap-8 flex-col">
       <div className="w-full flex justify-end">
         <Button variant="text-blue" onClick={closeClick}>
           {translations.cta_back_form}

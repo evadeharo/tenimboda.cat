@@ -25,7 +25,7 @@ export const translations = {
     { hour: "19h", text: "Festa, ball i barra lliure" },
   ],
   present_title: `Volem fer un **viatge**`,
-  present_text: `Com bé ja sabeu, l'any passat vam mudar-nos a viure junts. Ara tenim un piset molt acollidor i ben preparat pel nostre dia a dia. Tot això gràcies a molts de vosaltres, que ens heu ajudat amb un munt de coses: pintar, tapar forats, desmuntar i muntar mobles, compres vàries, electrodomèstics, cortines, tèxtils, decoració i fins i tot el 'maleït' donut (que tant ens va costar trobar!!!).\n Aquesta invitació és perquè volem celebrar el nostre compromís amb tu, i no ens cal cap regal. Si tot i així vols participar en el nostre camí, pots donar-nos un cop de mà perquè la lluna de mel sigui encara més inoblidable ✨\n Pots fer una transferència al següent número de compte\n IBAN: ES58 1465 0120 3317 5722 5377`,
+  present_text: `Com bé ja sabeu, l'any passat vam mudar-nos a viure junts. Ara tenim un piset molt acollidor i ben preparat pel nostre dia a dia. Tot això gràcies a molts de vosaltres, que ens heu ajudat amb un munt de coses: pintar, tapar forats, desmuntar i muntar mobles, compres vàries, electrodomèstics, cortines, tèxtils, decoració i fins i tot el 'maleït' donut (que tant ens va costar trobar!!!).\n Aquesta invitació és perquè volem celebrar el nostre compromís amb tu, i no ens cal cap regal. Si tot i així vols participar en el nostre camí, pots donar-nos un cop de mà perquè la lluna de mel sigui encara més inoblidable ✨\n Pots fer una transferència al següent número de compte\n _IBAN: ES58 1465 0120 3317 5722 5377_`,
   faqs_title: "FAQS",
   faqs_content: [
     {
@@ -68,7 +68,7 @@ export const translations = {
   confirmation_title_2:
     "Tens alguna intolerància, al·lèrgia o restricció alimentària?*",
   confirmation_text_2:
-    "Tingues en compte que aquesta pregunta no és per a respondre si hi ha alguna cosa que no t'agrada menjar. Sinó que és per a gent que realment no pot menjar un aliment per motius mèdics.",
+    "Tingues en compte que aquesta pregunta no és per a respondre si hi ha alguna cosa que no t'agrada menjar. Sinó que és per a persones que realment no poden menjar un aliment.",
   confirmation_title_3: "Digue'ns quin és l'aliment que no pots menjar",
   confirmation_placeholder_3: "El que no puc menjar és...",
   confirmation_title_4: "Vindrà {nomAcompanyant} amb tu?*",
@@ -77,7 +77,7 @@ export const translations = {
   confirmation_title_5:
     "El teu acompanyant té alguna intolerància, al·lèrgia o restricció alimentària?",
   confirmation_text_5:
-    "Tingues en compte que aquesta pregunta no és per a respondre si hi ha alguna cosa que no li agrada menjar. Sinó que és per a gent que realment no pot menjar un aliment per motius mèdics.",
+    "Tingues en compte que aquesta pregunta no és per a respondre si hi ha alguna cosa que no li agrada menjar. Sinó que és per a persones que realment no poden menjar un aliment.",
   confirmation_cta_no_5: "No en té",
   confirmation_cta_yes_5: "Sí en té",
   confirmation_title_6: "Digue'ns quin és l'aliment que no pot menjar",
@@ -101,4 +101,5 @@ export const translations = {
   thanks_text:
     "Recorda llegir bé tota la informació que hem deixat en aquest web. I no dubtis en contactar-nos si ho necesites!",
   thanks_cta: "Ens veiem el dia 11/04!",
+  copied: "Copiat",
 };

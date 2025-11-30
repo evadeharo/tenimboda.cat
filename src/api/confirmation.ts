@@ -28,16 +28,22 @@ export async function apiFetch<T>(
     ...options,
   });
 
-  if (!response.ok) {
+  if (!response.status) {
     const message = await response.text();
     throw new Error(`Error ${response.status}: ${message}`);
   }
 
-  return response.json() as Promise<T>;
+  const raw = await response.text();
+
+  try {
+    return JSON.parse(raw);
+  } catch (err) {
+    throw new Error("❌ La API NO devuelve JSON válido");
+  }
 }
 
 export async function confirmation(data: ConfirmationData) {
-  return apiFetch<{ success: boolean }>("/confirmation", {
+  return apiFetch<{ message: string }>("/confirmation", {
     method: "POST",
     body: JSON.stringify({ data }),
   });

@@ -22,7 +22,7 @@ export default function Important() {
 
   return (
     <Grid className="min-h-screen flex items-end pb-[3.75rem]" id="important">
-      <div className="col-span-3 col-start-2 overflow-hidden md:hidden">
+      <div className="col-span-3 col-start-2 overflow-hidden md:hidden min-h-[50vh] grid place-items-end">
         <AnimatePresence>
           {hover && (
             <motion.img
