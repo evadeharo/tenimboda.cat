@@ -13,7 +13,7 @@ export default function Time() {
       onMouseMove={handleMouseMove}
       id="temps"
     >
-      <div className="col-span-4 lg:col-span-8">
+      <div className="col-span-4 md:col-span-8">
         <h2 className="text-title-m-mobile lg:text-title-m pb-[1.75rem]">
           {translations.time_title}
         </h2>

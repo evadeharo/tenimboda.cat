@@ -38,7 +38,7 @@ export default function Important() {
         </AnimatePresence>
       </div>
 
-      <div className="col-span-4 lg:col-span-7 group">
+      <div className="col-span-4 md:col-span-7 group">
         <h2 className="text-title-l-mobile lg:text-title-l">
           {translations.important_title}
         </h2>
@@ -129,7 +129,7 @@ export default function Important() {
 
       <img
         src="images/spray/spray_bottom.png"
-        className="absolute inset-0 -z-10 lg:hidden"
+        className="absolute inset-0 -z-10 md:hidden"
         draggable={false}
       />
     </Grid>
