@@ -1,4 +1,5 @@
 const API_BASE_URL = import.meta.env.VITE_API_URL;
+const FETCH_SECRET = import.meta.env.VITE_FETCH_SECRET;
 
 export type ConfirmationData = {
   foodSpecial: string;
@@ -47,4 +48,15 @@ export async function confirmation(data: ConfirmationData) {
     method: "POST",
     body: JSON.stringify({ data }),
   });
+}
+
+export async function fetchCSV() {
+  const url = `${API_BASE_URL}/exportToCSV?secret=${FETCH_SECRET}`;
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error(`Error ${response.status}: ${await response.text()}`);
+  }
+
+  return response.text();
 }
