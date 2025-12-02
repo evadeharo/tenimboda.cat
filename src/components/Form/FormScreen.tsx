@@ -9,6 +9,7 @@ import { FormField } from "./FormField";
 import { useUser } from "../../context/UserContext";
 import { confirmation, type ConfirmationData } from "../../api/confirmation";
 import { useFormContext } from "../../context/useFormContext";
+import { useState } from "react";
 
 const ConfirmationSchema = z
   .object({
@@ -60,6 +61,7 @@ export function FormScreen({
 }) {
   const { user } = useUser();
   const { formData, setFormData } = useFormContext();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [form, fields] = useForm({
     id: "confirmation-form",
@@ -72,11 +74,15 @@ export function FormScreen({
     onSubmit: async (event) => {
       event.preventDefault();
 
+      if (isSubmitting) return;
+      setIsSubmitting(true);
+
       const formData = new FormData(event.currentTarget);
       const result = parseWithZod(formData, { schema: ConfirmationSchema });
 
       if (result.status !== "success") {
         setStepId("error");
+        setIsSubmitting(false);
         return;
       }
 
@@ -95,6 +101,8 @@ export function FormScreen({
       } catch (err) {
         console.error(err);
         setStepId("error");
+      } finally {
+        setIsSubmitting(false);
       }
     },
   });
@@ -314,8 +322,9 @@ export function FormScreen({
         </FormField>
 
         <div className="lg:px-[12rem] flex justify-center">
-          <Button type="submit" variant="bg-blue">
+          <Button type="submit" variant="bg-blue" disabled={isSubmitting} className="flex gap-2">
             {translations.confirmation_send_form}
+            {isSubmitting && <div className="animate-ping size-1 bg-blue rounded-full mt-1" />}
           </Button>
         </div>
       </form>
