@@ -5,16 +5,16 @@ import Grid from "./Grid";
 import Markdown from "./Markdown";
 
 export default function Footer() {
-  const { user } = useUser();
+  const { user, hasAnswered } = useUser();
 
   return (
-    <Grid className="py-[3rem] lg:py-[3.75rem] min-h-screen bg-yellow">
-      {user && (
-        <div className="col-span-4 lg:col-span-3 order-2 lg:order-1">
+    <Grid className="py-[3rem] md:py-[3.75rem] min-h-screen bg-yellow">
+      {user && !hasAnswered && (
+        <div className="col-span-4 md:col-span-6 lg:col-span-3 order-2 md:order-1">
           <Markdown
             components={{
               p: ({ children }) => (
-                <p className="text-base-mobile lg:text-base">{children}</p>
+                <p className="text-base-mobile md:text-base">{children}</p>
               ),
               strong: ({ children }) => (
                 <strong className="font-bold text-black">{children}</strong>
@@ -37,14 +37,14 @@ export default function Footer() {
       )}
       <div
         className={cx(
-          "col-span-4 lg:col-span-5 order-1 lg:order-2",
+          "col-span-4 md:col-span-6 lg:col-span-5 order-1 md:order-2",
           user && "lg:col-start-5"
         )}
       >
         <Markdown
           components={{
             p: ({ children }) => (
-              <p className="text-base-mobile lg:text-base">{children}</p>
+              <p className="text-base-mobile md:text-base">{children}</p>
             ),
             strong: ({ children }) => (
               <strong className="font-bold text-black">{children}</strong>
@@ -64,9 +64,9 @@ export default function Footer() {
           {translations.footer_text}
         </Markdown>
       </div>
-      <div className="col-span-4 lg:col-span-full flex items-end order-3">
-        <div className="flex flex-col w-max">
-          <h1 className="text-title-xl-mobile lg:text-title-xl w-2/3 lg:w-full">
+      <div className="col-span-4 md:col-span-full flex items-end order-3">
+        <div className="flex flex-col w-max md:gap-2">
+          <h1 className="text-title-xl-mobile lg:text-title-xl w-2/3 md:w-full">
             {translations.orioleva}
           </h1>
           <h2 className="text-subtitle-mobile lg:text-subtitle">

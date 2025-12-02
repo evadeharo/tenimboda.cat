@@ -13,7 +13,7 @@ export default function Location() {
       onMouseMove={handleMouseMove}
       id="lloc"
     >
-      <div className="col-span-4 lg:col-span-8">
+      <div className="col-span-4 md:col-span-8">
         <h2 className="text-title-m-mobile lg:text-title-m pb-[1.75rem]">
           {translations.locations_title}
         </h2>
