@@ -25,7 +25,6 @@ export const invites = [
   { name: "Aleix", userId: "INV-C42010" },
   { name: "Berta", userId: "INV-285394" },
   { name: "Martí", userId: "INV-886CE5" },
-
   { name: "Tere", userId: "INV-EEF220" },
   { name: "Vicente", userId: "INV-FF9894" },
   { name: "Loli", userId: "INV-A0DC21" },
@@ -40,10 +39,8 @@ export const invites = [
   { name: "Dani", userId: "INV-6D5178" },
   { name: "Ángel", userId: "INV-B74A41" },
   { name: "Gloria", userId: "INV-B62E96" },
-
   { name: "Nito", userId: "INV-693DA6" },
   { name: "Mercé", userId: "INV-49F45D" },
-
   { name: "Tata", userId: "INV-A6D61D" },
   { name: "Tato", userId: "INV-750ADD" },
   { name: "Carme", userId: "INV-879C3D" },
@@ -57,7 +54,6 @@ export const invites = [
   { name: "Didac", userId: "INV-9DFA17" },
   { name: "Carme", userId: "INV-1CCEE3" },
   { name: "Herminda", userId: "INV-9C676F" },
-
   { name: "Aitor", userId: "INV-26F759" },
   { name: "Aina", userId: "INV-9C851C" },
   { name: "Lesly", userId: "INV-7BF8FD" },
@@ -94,7 +90,6 @@ export const invites = [
   { name: "Jan", userId: "INV-8AF25E" },
   { name: "Xavo", userId: "INV-14A484" },
   { name: "Less", userId: "INV-F23039" },
-
   { name: "Tiet Joan", userId: "INV-D7D720" },
   { name: "Tieta Teresa", userId: "INV-C4413B" },
   { name: "Salva", userId: "INV-80EC0D" },
@@ -105,7 +100,6 @@ export const invites = [
   { name: "Tieta Glòria", userId: "INV-474B4C" },
   { name: "Jaume", userId: "INV-A28C27" },
   { name: "Eva", userId: "INV-3270A7" },
-
   { name: "Ribes", userId: "INV-B33873" },
   { name: "Remei", userId: "INV-3301BA" },
   { name: "Andrés", plusOneName: "Isabel", userId: "INV-BFA7E4" },
