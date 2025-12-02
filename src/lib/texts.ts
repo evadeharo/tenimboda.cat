@@ -30,7 +30,7 @@ export const translations = {
   faqs_content: [
     {
       title: "Quin és el Dress Code?",
-      text: `Sentit comú! Volem que vingueu còmodes i llestxs per gaudir al màxim d'aquell dia. Eviteu el color blanc i qualsevol color que es pugui confondre amb el blanc. \nTambé reservarem el color **verd maragda** per als nostres padrins i dames d'honor.\nRecorda que l'enllaç tindrà lloc a La Cerdanya, als Pirineus. L'abril és el segon mes de primavera, quan els dies es van fent més llargs. Les temperatures màximes solen rondar els 20°C sempre que hi hagi sol, però la temperatura pot baixar fins a valors propers als 0°C a la nit.`,
+      text: `Sentit comú! Volem que vingueu còmodes i llestxs per gaudir al màxim d'aquell dia. Eviteu el color blanc i qualsevol color que es pugui confondre amb el blanc. \nTambé reservarem el color [verd maragda](https://www.google.com/search?sca_esv=940aa337a8577638&rlz=1C5CHFA_enES1088ES1088&sxsrf=AE3TifNKvTxA4Lwq4fcRiAGqIkOMjT5-Yw:1764702089352&udm=2&fbs=AIIjpHx4nJjfGojPVHhEACUHPiMQht6_BFq6vBIoFFRK7qchKMW1IFhUOYUkQKgifbEmK8siXA9do850QAjDAMFUUa0Jbk4JwGTrGeS-ExmWSTn27M7K4uMeRoGqGq3AOVzF-QMmhdzeAVO54Ph8p5qDc9W0sVpccm585OQ_srFxEQETYxrHMofop-VdA_PGIIZUZFG49qW47bcQkUlXdyFs8SKr1480FQ&q=verd+maragda&sa=X&sqi=2&ved=2ahUKEwjWka7Jy5-RAxU-UqQEHd0cFQMQtKgLegQIEBAB&biw=1512&bih=861&dpr=2) per als nostres padrins i dames d'honor.\nRecorda que l'enllaç tindrà lloc a La Cerdanya, als Pirineus. L'abril és el segon mes de primavera, quan els dies es van fent més llargs. Les temperatures màximes solen rondar els 20°C sempre que hi hagi sol, però la temperatura pot baixar fins a valors propers als 0°C a la nit.`,
     },
     {
       title: "On puc allotjar-me?",
@@ -42,11 +42,11 @@ export const translations = {
     },
     {
       title: "Tinc necesitats especials amb el menjar",
-      text: "Cap problema! Quan facis click en la confirmació d'assistència et farem diverses preguntes. Entre elles si tens alguna intolerància, al·lèrgia o restricció alimentària.",
+      text: "Cap problema! Quan facis click en la confirmació d'assistència et farem diverses preguntes.\n Entre elles si tens alguna intolerància, al·lèrgia o restricció alimentària.",
     },
     {
       title: "I si tinc algún dubte extra o d'últim moment?",
-      text: "Tenim la súper sort de comptar amb la Clàudia i en Jordi d'[Emocions de Blanc](https://emocionsdeblanc.com/). Qualsevol dubte d'últim moment els hi podeu fer directament a ells, son magnífics i segur que podran resoldre qualsevol cosa que pugui sorgir!"
+      text: "Tenim la súper sort de comptar amb la Clàudia i en Jordi d'[Emocions de Blanc](https://emocionsdeblanc.com/). Qualsevol dubte d'últim moment els hi podeu fer arribar directament a ells, son magnífics i segur que podran donar-vos un cop de mà!"
     }
   ],
   footer_reminder: `No t'oblidis de confirmar assistència.\n Pots fer-ho fent [clic aquí](/confirmation)`,
