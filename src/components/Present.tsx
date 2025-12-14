@@ -29,8 +29,6 @@ const images = [
   "images/trail/19.JPG",
   "images/trail/20.jpg",
   "images/trail/21.jpg",
-  "images/trail/22.jpg",
-  "images/trail/23.jpg",
   "images/trail/24.jpg",
   "images/trail/25.jpg",
   "images/trail/26.jpg",
