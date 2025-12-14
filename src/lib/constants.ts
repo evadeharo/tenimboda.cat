@@ -67,7 +67,7 @@ export const invites = [
   { name: "Iker", plusOneName: "Laura", userId: "INV-CFC0C7" },
   { name: "Samu", userId: "INV-B18043" },
   { name: "Alejandra", userId: "INV-841560" },
-  { name: "Jhon", userId: "INV-BDEA2B" },
+  { name: "John", userId: "INV-BDEA2B" },
   { name: "Carlo", userId: "INV-7F3921" },
   { name: "Joan", userId: "INV-8A8BB9" },
   { name: "Jordi", userId: "INV-AAC8C2" },
