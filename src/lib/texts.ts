@@ -38,15 +38,15 @@ export const translations = {
     },
     {
       title: "On puc aparcar el cotxe?",
-      text: "Tant l'església com el restaurant tenen aparcament, no hi haurà problemes amb l'espai. Només us demanem que sigueu responsables: si heu de conduir millor beure begudes sense alcohol 😉",
+      text: "Tant l'esglèsia com el restaurant tenen aparcament, no hi haurà problemes amb l'espai. Només us demanem que sigueu responsables: si heu de conduir millor beure begudes sense alcohol 😉",
     },
     {
       title: "Tinc necesitats especials amb el menjar",
-      text: "Cap problema! Quan facis click en la confirmació d'assistència et farem diverses preguntes.\n Entre elles si tens alguna intolerància, al·lèrgia o restricció alimentària.",
+      text: "No hi ha problema! Quan facis click per a confirmar assistència et farem diverses preguntes. Entre elles si tens alguna intolerància, al·lèrgia o restricció alimentària.",
     },
     {
       title: "I si tinc algún dubte extra o d'últim moment?",
-      text: "Tenim la súper sort de comptar amb la Clàudia i en Jordi d'[Emocions de Blanc](https://emocionsdeblanc.com/). Qualsevol dubte d'últim moment els hi podeu fer arribar directament a ells, son magnífics i segur que podran donar-vos un cop de mà!"
+      text: "Tenim la súper sort de comptar amb la Clàudia i en Jordi d'[Emocions de Blanc](https://emocionsdeblanc.com/). Qualsevol dubte d'últim moment els hi podeu fer arribar directament a ells, son magnífics i segur que podran donar-vos un cop de mà amb el que pugui sorgir!"
     }
   ],
   footer_reminder: `No t'oblidis de confirmar assistència.\n Pots fer-ho fent [clic aquí](/confirmation)`,
