@@ -28,7 +28,7 @@ const ConfirmationSchema = z
       ctx.addIssue({
         path: ["foodSpecialInput"],
         code: z.ZodIssueCode.custom,
-        message: "Necesitem aquesta info!",
+        message: "Necessitem aquesta info!",
       });
     }
     if (data.plusOne === "true" && data.plusOneFoodSpecial === undefined) {
@@ -45,7 +45,7 @@ const ConfirmationSchema = z
       ctx.addIssue({
         path: ["plusOneFoodSpecialInput"],
         code: z.ZodIssueCode.custom,
-        message: "Necesitem aquesta info!",
+        message: "Necessitem aquesta info!",
       });
     }
   });

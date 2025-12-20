@@ -24,7 +24,7 @@ function ProtectedConfirmation() {
   }
 
   if (!user) {
-    return <div>Cargando...</div>;
+    return <div>Carregant...</div>;
   }
 
   return <FormPage />;

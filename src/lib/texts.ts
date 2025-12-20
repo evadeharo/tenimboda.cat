@@ -5,7 +5,7 @@ export const translations = {
   important_title: `Ei ei ei!`,
   important_title2: `Tenim **boda**!`,
   important_text: `Hola {nomConvidat}! Si has rebut aquest lloc web vol dir que ens fa molta il·lusió que ens acompanyis durant aquell dia. I perquè puguis organitzar-te et deixem els detalls més importants a continuació.`,
-  important_details: `**Dissabte 11 d'abril de 2026**\nCerimonia religiosa a l'[esglèsia de Santa Maria de Llívia](https://share.google/gZrC0i61nemwl0KoJ)\nConvit, celebració i festa a [La Formatgeria de Llívia](https://www.laformatgeria.com/)`,
+  important_details: `**Dissabte 11 d'abril de 2026**\nCerimonia religiosa a l'[església de Santa Maria de Llívia](https://share.google/gZrC0i61nemwl0KoJ)\nConvit, celebració i festa a [La Formatgeria de Llívia](https://www.laformatgeria.com/)`,
   cta_confirmation: `Confirmo que vinc!`,
   cta_important: `Important`,
   cta_location: `Ubicació`,
@@ -19,7 +19,7 @@ export const translations = {
   time_times: [
     {
       hour: "12h",
-      text: `Cerimonia religiosa a l'[esglèsia de Santa Maria de Llívia](https://share.google/gZrC0i61nemwl0KoJ)\n Trasllat a [La Formatgeria de Llívia](https://www.laformatgeria.com/)`,
+      text: `Cerimonia religiosa a l'[església de Santa Maria de Llívia](https://share.google/gZrC0i61nemwl0KoJ)\n Trasllat a [La Formatgeria de Llívia](https://www.laformatgeria.com/)`,
     },
     { hour: "14h", text: `Inici dels aperitius\n Dinar & sobretaula` },
     { hour: "19h", text: "Festa, ball i barra lliure" },
@@ -38,14 +38,14 @@ export const translations = {
     },
     {
       title: "On puc aparcar el cotxe?",
-      text: "Tant l'esglèsia com el restaurant tenen aparcament, no hi haurà problemes amb l'espai. Només us demanem que sigueu responsables: si heu de conduir millor beure begudes sense alcohol 😉",
+      text: "Tant l'església com el restaurant tenen aparcament, no hi haurà problemes amb l'espai. Només us demanem que sigueu responsables: si heu de conduir millor beure begudes sense alcohol 😉",
     },
     {
-      title: "Tinc necesitats especials amb el menjar",
+      title: "Tinc necessitats especials amb el menjar",
       text: "No hi ha problema! Quan facis click per a confirmar assistència et farem diverses preguntes. Entre elles si tens alguna intolerància, al·lèrgia o restricció alimentària.",
     },
     {
-      title: "I si tinc algún dubte extra o d'últim moment?",
+      title: "I si tinc algun dubte extra o d'últim moment?",
       text: "Tenim la súper sort de comptar amb la Clàudia i en Jordi d'[Emocions de Blanc](https://emocionsdeblanc.com/). Qualsevol dubte d'últim moment els hi podeu fer arribar directament a ells, son magnífics i segur que podran donar-vos un cop de mà amb el que pugui sorgir!"
     }
   ],
@@ -90,16 +90,16 @@ export const translations = {
 
   // FormScreens
   cta_back_form: "Torna al formulari",
-  warning_title: "Compte! Perdrás totes les dades!",
+  warning_title: "Compte! Perdràs totes les dades!",
   warning_text: "Confirmes que vols sortir del formulari?",
   cta_leave_form: "Sortir del formulari",
   error_title: "Ops! Sembla que hi ha hagut un error",
-  error_text: "Sembla que alguna cosa no ha anat bé. Torna a probar o contacta'ns per a més informació.",
+  error_text: "Sembla que alguna cosa no ha anat bé. Torna a provar o contacta'ns per a més informació.",
 
   thanks_title:
     "Moltes gràcies ${nomConvidat}! La teva assistència ha estat confirmada.",
   thanks_text:
-    "Recorda llegir bé tota la informació que hem deixat en aquest web. I no dubtis en contactar-nos si ho necesites!",
+    "Recorda llegir bé tota la informació que hem deixat en aquest web. I no dubtis en contactar-nos si ho necessitis!",
   thanks_cta: "Ens veiem el dia 11/04!",
   copied: "Copiat",
 };
