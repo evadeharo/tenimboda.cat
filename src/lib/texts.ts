@@ -99,7 +99,7 @@ export const translations = {
   thanks_title:
     "Moltes gràcies ${nomConvidat}! La teva assistència ha estat confirmada.",
   thanks_text:
-    "Recorda llegir bé tota la informació que hem deixat en aquest web. I no dubtis en contactar-nos si ho necessitis!",
+    "Recorda llegir bé tota la informació que hem deixat en aquest web. I no dubtis en contactar-nos si ho necessites!",
   thanks_cta: "Ens veiem el dia 11/04!",
   copied: "Copiat",
 };
